@@ -109,7 +109,22 @@ True
 True
 > isOdd (5 + 1)
 False
+```
 
+## Scopes
+
+`let` espressions can be used to scope declarations
+The scope of `dash` and `isKeepable` are contained within `let`, and are not accessible globally
+
+```elm
+> withoutDashes str = \
+|   let \
+|     dash = \
+|       '-' \
+|     isKeepable character = \
+|       character /= dash \
+|   in \
+|     String.filter isKeepable str
 ```
 
 
