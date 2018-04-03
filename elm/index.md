@@ -152,6 +152,15 @@ The scope of `dash` and `isKeepable` are contained within `let`, and are not acc
 
 -- Anonymous function
 > \w h -> w * h
+
+-- Another example
+> import Char
+> String.filter (\char -> Char.isDigit char) "(800) 555-1234"
+"8005551234"
+
+-- Refactored version of above
+> String.filter Char.isDigit "(800) 555-1234"
+"8005551234"
 ```
 
 
