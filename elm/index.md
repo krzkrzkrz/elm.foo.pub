@@ -1,16 +1,18 @@
-# ELM Journey
+# Elm Journey
 
 ## Comments
 
 ```elm
 -- Inline comments:
---
+-- Inline comment here
 ```
 
 
 ```elm
 -- Block comments:
-{- -}
+{-
+  Block comment here
+-}
 ```
 
 ## String concatenation
@@ -40,6 +42,11 @@
 -- Error: Must contain 1 character
 ''
 ```
+
+## Boolean & conditions
+
+* You write `True` and `False` instead of `true` and `false`
+* You write `/=` instead of `!==`
 
 * [Introduction](README.md)
 * [Authentication](overview/authentication.md)
