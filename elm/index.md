@@ -10,6 +10,7 @@ To start Elm REPL, type `elm-repl` in a terminal
 -- Creating a function with multiple lines
 -- Use \
 -- And |, but dont forget to tab (2 spaces)
+
 > pluralize singular plural count = \
 |   if count == 1 then singular else plural
 <function>
@@ -101,6 +102,7 @@ else
 -- Parameters are before the =
 -- There is no return, since a function body is a single expression
 -- And since an expression evaluates to a single value, Elm uses that value as the function's return value
+
 > isOdd num = num % 2 == 1
 <function>
 > isOdd 5
@@ -118,7 +120,9 @@ False
 The scope of `dash` and `isKeepable` are contained within `let`, and are not accessible globally
 
 ```elm
+-- Scoped declaration
 -- dash and isKeepable are scoped insided withoutDashes
+
 > withoutDashes str = \
 |   let \
 |     dash = \
@@ -128,7 +132,9 @@ The scope of `dash` and `isKeepable` are contained within `let`, and are not acc
 |   in \
 |     String.filter isKeepable str
 
+-- Global declaration
 -- dash and isKeepable are globally accessible
+
 > dash = '-'
 > isKeepable character = character /= dash
 > withoutDashes str = String.filter isKeepable str
