@@ -79,6 +79,21 @@ else
   "Three"
 ```
 
+## Functions
+
+```elm
+-- Parameters are before the =
+-- There is no return, since a function body is a single expression
+-- And since an expression evaluates to a single value, Elm uses that value as the function's return value
+> isOdd num = num % 2 == 1
+<function>
+> isOdd 5
+True
+> (isOdd 5)
+True
+> isOdd (5 + 1)
+False
+```
 
 
 
