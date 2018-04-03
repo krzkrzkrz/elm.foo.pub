@@ -2,13 +2,29 @@
 
 [Elm](https://guide.elm-lang.org) is a functional language that compiles to JavaScript.
 
+## Elm REPL
+
+To start Elm REPL, type `elm-repl` in a terminal
+
+```elm
+-- Creating a function with multiple lines
+-- Use \
+-- And |, but dont forget to tab (2 spaces)
+> pluralize singular plural count = \
+|   if count == 1 then singular else plural
+<function>
+> pluralize "elf" "elves" 3
+"elves"
+> pluralize "elf" "elves" (round 0.9)
+"elf"
+```
+
 ## Comments
 
 ```elm
 -- Inline comments:
 -- Inline comment here
 ```
-
 
 ```elm
 -- Block comments:
@@ -93,6 +109,7 @@ True
 True
 > isOdd (5 + 1)
 False
+
 ```
 
 
