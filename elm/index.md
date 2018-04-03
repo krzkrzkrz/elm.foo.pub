@@ -1,5 +1,7 @@
 # Elm Journey
 
+[Elm](https://guide.elm-lang.org)
+
 ## Comments
 
 ```elm
