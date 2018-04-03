@@ -140,6 +140,20 @@ The scope of `dash` and `isKeepable` are contained within `let`, and are not acc
 > withoutDashes str = String.filter isKeepable str
 ```
 
+## Anonymous functions
+
+* Functions that dont need a name
+* They begin with a `\`
+* The parameters are followed by a `->`, instead of a `=`
+
+```elm
+-- Named function
+> area w h = w * h
+
+-- Anonymous function
+> \w h -> w * h
+```
+
 
 
 ```elm
