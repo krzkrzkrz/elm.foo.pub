@@ -51,15 +51,36 @@
 
 ```elm
 > pi == pi
-True ❷
+True
 > pi /= pi
-False ❹
+False
 > not (pi == pi)
 False
 > pi <= 0 || pi >= 10
 False
 > 3 < pi && pi < 4
 True
+```
+
+## Conditions
+
+```elm
+-- Ternary condition:
+if 1 == 1 then "Yes" else "No"
+
+-- Condition blocks
+if foo == 1 then
+  "One"
+else if foo == 2 then
+  "Two"
+else
+  "Three"
+```
+
+
+
+
+```elm
 ```
 
 
