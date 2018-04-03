@@ -1,4 +1,10 @@
-## ELM Journey
+# ELM Journey
+
+## String concatenation
+
+```elm
+"Hello, " ++ "World!"
+```
 
 * [Introduction](README.md)
 * [Authentication](overview/authentication.md)
