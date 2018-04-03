@@ -1,9 +1,29 @@
 # ELM Journey
 
+## Comments
+
+Inline comments:
+
+```elm
+--
+```
+
+Block comments:
+
+```elm
+{- -}
+```
+
 ## String concatenation
 
 ```elm
 "Hello, " ++ "World!"
+```
+
+## Strings and characters
+
+```elm
+"a"
 ```
 
 * [Introduction](README.md)
