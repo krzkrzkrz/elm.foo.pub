@@ -47,15 +47,24 @@
 
 * You write `True` and `False` instead of `true` and `false`
 * You write `/=` instead of `!==`
+* To negate values, you use `not`
 
-* [Introduction](README.md)
-* [Authentication](overview/authentication.md)
-* [Status codes](overview/status-codes.md)
-* [About our tokens](overview/about-our-tokens.md)
-* [Handling payments](overview/handling-payments.md)
-* [Images](overview/images.md)
-* [Sorting](overview/sorting.md)
-* [Including documents](overview/including-documents.md)
-* [Pagination](overview/pagination.md)
+```elm
+> pi == pi
+True ❷
+> pi /= pi
+False ❹
+> not (pi == pi)
+False
+> pi <= 0 || pi >= 10
+False
+> 3 < pi && pi < 4
+True
+```
+
+
+
+
+
 
 
