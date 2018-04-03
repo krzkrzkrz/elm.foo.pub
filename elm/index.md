@@ -2,15 +2,14 @@
 
 ## Comments
 
-Inline comments:
-
 ```elm
+-- Inline comments:
 --
 ```
 
-Block comments:
 
 ```elm
+-- Block comments:
 {- -}
 ```
 
@@ -23,7 +22,23 @@ Block comments:
 ## Strings and characters
 
 ```elm
+-- This is a string with length of 1
 "a"
+
+-- This is a string with length of 3
+"abc"
+
+-- This is a single character
+'a'
+
+-- An empty string
+""
+
+-- Error: Must contain 1 character
+'abc'
+
+-- Error: Must contain 1 character
+''
 ```
 
 * [Introduction](README.md)
