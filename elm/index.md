@@ -114,9 +114,11 @@ False
 ## Scopes
 
 `let` espressions can be used to scope declarations
+
 The scope of `dash` and `isKeepable` are contained within `let`, and are not accessible globally
 
 ```elm
+-- dash and isKeepable are scoped insided withoutDashes
 > withoutDashes str = \
 |   let \
 |     dash = \
@@ -125,6 +127,11 @@ The scope of `dash` and `isKeepable` are contained within `let`, and are not acc
 |       character /= dash \
 |   in \
 |     String.filter isKeepable str
+
+-- dash and isKeepable are globally accessible
+> dash = '-'
+> isKeepable character = character /= dash
+> withoutDashes str = String.filter isKeepable str
 ```
 
 
