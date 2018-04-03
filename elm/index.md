@@ -1,5 +1,7 @@
 # Elm Journey
 
+Elm is a functional language that compiles to JavaScript.
+
 [Elm](https://guide.elm-lang.org)
 
 ## Comments
