@@ -225,10 +225,50 @@ Returns error
 [1,3,5] : List Int
 ```
 
+## Records
+
+```elm
+> { name = "Li", cats = 2 }
+{ name = "Li", cats = 2 } : { cats : number, name : String }
+
+> { name = "Li", cats = 2 }.cats
+2 : number
+
+> catLover = { name = "Li", cats = 2 }
+{ name = "Li", cats = 2 } : { cats : number, name : String }
+
+> withThirdCat = { catLover | cats = 3 }
+{ name = "Li", cats = 3 } : { name : String, cats : number }
+
+> { catLover | cats = 88, name = "LORD OF CATS" }
+{ name = "LORD OF CATS", cats = 88 } : { cats : number, name : String }
+
+-- catLover record unmodified
+> catLover
+{ name = "Li", cats = 2 } : { name : String, cats : number }
+```
+
+## Tuples
+
+List of items representing a collection of varying types
+
+Tuples are for when you want a record, but don’t want to bother naming its fields. They are often used for things like key-value pairs where writing out `{ key = "foo", value = "bar" }` would add verbosity but not much clarity
+
+```elm
+> ( "Tech", 9 )
+("Tech",9) : ( String, number )
+
+-- You can only use the Tuple.first and Tuple.second functions on tuples that contain two elements
+-- If they have more than two, you can use tuple destructuring to extract their values
+> Tuple.first ( "Tech", 9 )
+"Tech" : String
+
+> Tuple.second ( "Tech", 9 )
+9 : number
+```
 
 ```elm
 ```
-
 
 
 
