@@ -213,6 +213,16 @@ Just "one fish" : Maybe.Maybe String
 
 > [1, 2 ] ++ [ 3, 'a' ]
 Returns error
+
+> List.filter (\char -> char /= '-') [ 'Z', '-', 'Z' ]
+['Z','Z'] : List Char
+
+> import Char
+> List.filter Char.isDigit [ '7', '-', '9' ]
+['7','9'] : List Char
+
+> List.filter (\num -> num % 2 == 1) [ 1, 2, 3, 4, 5 ]
+[1,3,5] : List Int
 ```
 
 
