@@ -163,6 +163,30 @@ The scope of `dash` and `isKeepable` are contained within `let`, and are not acc
 "8005551234"
 ```
 
+## Operators
+
+```elm
+-- Inflix style
+7 - 4 == 4
+
+-- Prefix style
+(-) 4 3 == 4
+
+-- Some examples:
+> divideBy = (/)
+<function>
+> 7 / 2
+3.5
+> (/) 7 2
+3.5
+> divideBy 7 2
+3.5
+
+-- Operator precedence
+> (==) ((+) 3 4) ((-) 8 1)
+True : Bool
+```
+
 
 
 ```elm
