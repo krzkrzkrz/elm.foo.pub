@@ -199,7 +199,20 @@ True : Bool
 * Lists are used far more often (than arrays) because they have better performance characteristics in typical Elm use cases
 
 ```elm
-[ "one fish", "two fish" ]
+> [ "one fish", "two fish" ]
+["one fish","two fish"] : List String
+
+> List.length [ 1, 2, 3 ]
+3 : Int
+
+> List.head [ "one fish", "two fish" ]
+Just "one fish" : Maybe.Maybe String
+
+> [1, 2 ] ++ [ 3, 4 ]
+[1,2,3,4] : List number
+
+> [1, 2 ] ++ [ 3, 'a' ]
+Returns error
 ```
 
 
