@@ -187,6 +187,20 @@ The scope of `dash` and `isKeepable` are contained within `let`, and are not acc
 True : Bool
 ```
 
+## List
+
+* You can ask for its first element
+* You can ask for its length
+* You can iterate over its elements
+* It is immutable
+* If you need to ask for elements at various different positions, you can first convert from an Elm List to an Elm Array
+* Can be combined with another list via `++` operator
+* All elements must have a consistent type
+* Lists are used far more often (than arrays) because they have better performance characteristics in typical Elm use cases
+
+```elm
+[ "one fish", "two fish" ]
+```
 
 
 ```elm
