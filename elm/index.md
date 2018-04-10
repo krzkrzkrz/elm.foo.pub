@@ -271,13 +271,13 @@ Tuples are for when you want a record, but don’t want to bother naming its fie
 
 Package manager for Elm
 
-```elm
+```console
 $ elm-package install elm-lang/html
 ```
 
 You should see something like:
 
-```elm
+```console
 Some new packages are needed. Here is the upgrade plan.
 
   Install:
@@ -301,7 +301,7 @@ Afterwhich, `elm-package.json` is created in your current directory
 
 This will compile our `PhotoGroove.elm` file into a JavaScript file (`elm.js`) we can give to a browser.
 
-```elm
+```console
 $ elm-make PhotoGroove.elm --output elm.js
 Success! Compiled 0 modules.
 Successfully generated elm.js
@@ -312,9 +312,7 @@ You can now include `elm.js` into an HTML file, as such:
 ```html
 <!doctype html>
 <html>
-  <head>
-    ...
-  </head>
+  <head>...</head>
 
   <body>
     <div id="elm-area"></div>
