@@ -299,7 +299,7 @@ Afterwhich, `elm-package.json` is created in your current directory
 
 ## Compiling code
 
-This will compile our `PhotoGroove.elm` file into a JavaScript file we can give to a browser.
+This will compile our `PhotoGroove.elm` file into a JavaScript file (`elm.js`) we can give to a browser.
 
 ```elm
 $ elm-make PhotoGroove.elm --output elm.js
@@ -307,7 +307,22 @@ Success! Compiled 0 modules.
 Successfully generated elm.js
 ```
 
-```elm
+You can now include `elm.js` into an HTML file, as such:
+
+```html
+<!doctype html>
+<html>
+  <head>
+    ...
+  </head>
+
+  <body>
+    <div id="elm-area"></div>
+    <script src="elm.js"></script>
+
+    <script>Elm.PhotoGroove.embed(document.getElementById("elm-area"));</script>
+  </body>
+</html>
 ```
 
 ```elm
