@@ -267,6 +267,49 @@ Tuples are for when you want a record, but don’t want to bother naming its fie
 9 : number
 ```
 
+## Elm package
+
+Package manager for Elm
+
+```elm
+$ elm-package install elm-lang/html
+```
+
+You should see something like:
+
+```elm
+Some new packages are needed. Here is the upgrade plan.
+
+  Install:
+    elm-lang/core 5.1.1
+    elm-lang/html 2.0.0
+    elm-lang/virtual-dom 2.0.4
+
+Do you approve of this plan? [Y/n] Y
+Starting downloads...
+
+  ● elm-lang/virtual-dom 2.0.4
+  ● elm-lang/html 2.0.0
+  ● elm-lang/core 5.1.1
+
+Packages configured successfully!
+```
+
+Afterwhich, `elm-package.json` is created in your current directory
+
+## Compiling code
+
+This will compile our `PhotoGroove.elm` file into a JavaScript file we can give to a browser.
+
+```elm
+$ elm-make PhotoGroove.elm --output elm.js
+Success! Compiled 0 modules.
+Successfully generated elm.js
+```
+
+```elm
+```
+
 ```elm
 ```
 
