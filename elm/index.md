@@ -323,8 +323,32 @@ You can now include `elm.js` into an HTML file, as such:
 </html>
 ```
 
+## Partial application
+
+```elm
+> List.map ((*) 2) [ 1, 2, 3 ]
+[2,4,6] : List number
+```
+
+Hello  
+World
+
+Hello<br/>
+World
+
+hello\
+world
+
+Hello&nbsp;
+World
+
+
 ```elm
 ```
+
+```elm
+```
+
 
 
 
