@@ -5,6 +5,7 @@
 ## Elm REPL
 
 [[To]] start Elm REPL, type `elm-repl` in a terminal
+test
 
 ```elm
 -- Creating a function with multiple lines
