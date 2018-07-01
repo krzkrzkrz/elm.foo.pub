@@ -4,7 +4,7 @@
 
 ## Elm REPL
 
-To start Elm REPL, type `elm-repl` in a terminal
+[[To]] start Elm REPL, type `elm-repl` in a terminal
 
 ```elm
 -- Creating a function with multiple lines
@@ -18,6 +18,7 @@ To start Elm REPL, type `elm-repl` in a terminal
 "elves"
 > pluralize "elf" "elves" (round 0.9)
 "elf"
+> :exit
 ```
 
 ## Comments
@@ -37,7 +38,7 @@ To start Elm REPL, type `elm-repl` in a terminal
 ## String concatenation
 
 ```elm
-"Hello, " ++ "World!"
+"Hello" ++ " world!"
 ```
 
 ## Strings and characters
@@ -329,19 +330,6 @@ You can now include `elm.js` into an HTML file, as such:
 > List.map ((*) 2) [ 1, 2, 3 ]
 [2,4,6] : List number
 ```
-
-Hello  
-World
-
-Hello<br/>
-World
-
-hello\
-world
-
-Hello&nbsp;
-World
-
 
 ```elm
 ```
