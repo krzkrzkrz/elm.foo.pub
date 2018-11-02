@@ -190,6 +190,22 @@ let origin = Point(0, 0, 0);
 * Values can only be one of the variants
 * Each variant can have different types and amounts of associated data.
 
+`enum` in its simplest form:
+
+```rust
+enum IpAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
+
+fn main() {
+    let home = IpAddr::V4(127, 0, 0, 1);
+    let loopback = IpAddr::V6(String::from("::1"));
+}
+```
+
+A more complicated structure (with a comparison to a `struct`)
+
 ```rust
 enum Message {
     Quit,
@@ -212,12 +228,6 @@ struct ChangeColorMessage(i32, i32, i32); // Tuple struct
 ```
 
 `enums` have the advantage of grouping up several variants into one entity
-
-```rust
-enum IpAddr {
-    V4(u8, u8, u8, u8),
-    V6(String),
-}
 
 ## Functions
 
