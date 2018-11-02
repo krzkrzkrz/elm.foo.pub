@@ -191,6 +191,29 @@ let origin = Point(0, 0, 0);
 * Each variant can have different types and amounts of associated data.
 
 ```rust
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+```
+
+If the above following were to be constructed just using a `struct`, then it would look like:
+
+```rust
+struct QuitMessage; // Unit struct
+struct MoveMessage {
+    x: i32,
+    y: i32,
+}
+struct WriteMessage(String); // Tuple struct
+struct ChangeColorMessage(i32, i32, i32); // Tuple struct
+```
+
+`enums` have the advantage of grouping up several variants into one entity
+
+```rust
 enum IpAddr {
     V4(u8, u8, u8, u8),
     V6(String),
