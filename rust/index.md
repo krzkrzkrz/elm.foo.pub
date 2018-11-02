@@ -18,7 +18,7 @@ let hello = "hello"; // Inline comment
 
 ## Data types
 
-* Four primary scalar types: integers, floating-point numbers, Booleans, and characters
+* Four primary scalar types: integers, floating-point numbers, booleans, and characters
 
 ### Integer types
 
@@ -127,6 +127,8 @@ let tup: (i32, f64, u8) = (500, 6.4, 1);
 // Or
 let tup = (500, 6.4, 1);
 let (x, y, z) = tup;
+
+println!("{}", tup.0) // Returns 500
 ```
 
 ## Arrays
@@ -166,7 +168,7 @@ fn main() {
         ..user1 // The syntax .. specifies that the remaining fields (from user1) be explicitly set on user2
     };
 
-    println!("{} {}", user2.email, user2.username);
+    println!("{:?}", user2);
 }
 ```
 
@@ -197,6 +199,38 @@ fn main() {
 // Returns a 32 bit unsigned integer
 fn add_one(x: u32) -> u32 {
     x + 1
+}
+```
+
+## Methods
+
+* Methods are similar to functions
+* They are declared with the `fn`
+* They can have parameters and a return value
+* The difference: They are defined within the context of a struct (or an enum or a trait object)
+* The benefit of using methods instead of functions, in addition to using method syntax and not having to repeat the type of self in every method's signature, is for organization
+
+```rust
+struct User {
+    first_name: String,
+    last_name: String,
+}
+
+// To define the function within the context of User, we start an impl (implementation) block
+// And change the first (and in this case, only) parameter to be self
+impl User {
+    fn full_name(&self) -> String {
+        format!("{} {}", self.first_name, self.last_name)
+    }
+}
+
+fn main() {
+    let user1 = User {
+        first_name: String::from("Foo"),
+        last_name: String::from("Bar"),
+    };
+
+    println!("{}", user1.full_name());
 }
 ```
 
