@@ -217,6 +217,8 @@ struct User {
     age: u64,
 }
 
+// To define the function within the context of User, we start an impl (implementation) block
+// And change the first (and in this case, only) parameter to be self
 impl User {
     fn full_name(&self, nickname: &str) -> String {
         format!("{} {} aka {}", self.first_name, self.last_name, nickname)
@@ -238,8 +240,30 @@ fn main() {
         age: 18,
     };
 
-    println!("{}", user1.full_name("Bugsy"));
-    println!("This user can drive: {}", user1.can_drive());
+    println!("{}", user1.full_name("Bugsy")); // Returns "Foo Bar aka Foopub"
+    println!("This user can drive: {}", user1.can_drive()); // Returns "This user can drive: true"
+}
+```
+
+### Associated functions
+
+* To call this associated function, we use the `::` syntax with the struct name
+* Define functions within `impl` blocks that don't take `self` as a parameter
+
+```rust
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle { width: size, height: size }
+    }
+}
+
+fn main() {
+    let sq = Rectangle::square(3);
 }
 ```
 
