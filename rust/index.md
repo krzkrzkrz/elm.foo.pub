@@ -18,6 +18,10 @@ let hello = "hello"; // Inline comment
 
 ## Data types
 
+* Four primary scalar types: integers, floating-point numbers, Booleans, and characters
+
+### Integer types
+
 | Length  | Signed | Unsigned |
 |---------|--------|----------|
 | 8-bit   | i8     | u8       |
