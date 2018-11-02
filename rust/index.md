@@ -268,7 +268,13 @@ impl Rectangle {
 
 fn main() {
     let sq = Rectangle::square(3);
-    println!("{:#?}", sq); // Returns
+
+    // Returns:
+    // Rectangle {
+    //    width: 3,
+    //    height: 3
+    //}
+    println!("{:#?}", sq);
 }
 ```
 
