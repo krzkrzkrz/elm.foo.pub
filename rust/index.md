@@ -66,7 +66,6 @@ let likely_false: bool = false;
   let heart_eyed_cat = '😻';
 ```
 
-
 ## Variables
 
 * Variables by default, are immutable (i.e. not subject to change)
