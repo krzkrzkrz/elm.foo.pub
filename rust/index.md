@@ -214,13 +214,20 @@ fn add_one(x: u32) -> u32 {
 struct User {
     first_name: String,
     last_name: String,
+    age: u64,
 }
 
-// To define the function within the context of User, we start an impl (implementation) block
-// And change the first (and in this case, only) parameter to be self
 impl User {
-    fn full_name(&self) -> String {
-        format!("{} {}", self.first_name, self.last_name)
+    fn full_name(&self, nickname: &str) -> String {
+        format!("{} {} aka {}", self.first_name, self.last_name, nickname)
+    }
+
+    fn can_drive(&self) -> bool {
+        if self.age >= 18 {
+            true
+        } else {
+            false
+        }
     }
 }
 
@@ -228,9 +235,11 @@ fn main() {
     let user1 = User {
         first_name: String::from("Foo"),
         last_name: String::from("Bar"),
+        age: 18,
     };
 
-    println!("{}", user1.full_name());
+    println!("{}", user1.full_name("Bugsy"));
+    println!("This user can drive: {}", user1.can_drive());
 }
 ```
 
