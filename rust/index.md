@@ -185,6 +185,17 @@ let black = Color(0, 0, 0);
 let origin = Point(0, 0, 0);
 ```
 
+## Enums
+
+* Values can only be one of the variants
+* Each variant can have different types and amounts of associated data.
+
+```rust
+enum IpAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
+
 ## Functions
 
 ```rust
@@ -288,6 +299,12 @@ fn main() {
 ```rust
 let y = 6; // Statement
 y + 1 // Expression
+```
+
+fn main() {
+    let home = IpAddr::V4(127, 0, 0, 1);
+    let loopback = IpAddr::V6(String::from("::1"));
+}
 ```
 
 ## Conditions
