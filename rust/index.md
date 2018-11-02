@@ -251,6 +251,7 @@ fn main() {
 * Define functions within `impl` blocks that don't take `self` as a parameter
 
 ```rust
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
@@ -258,12 +259,16 @@ struct Rectangle {
 
 impl Rectangle {
     fn square(size: u32) -> Rectangle {
-        Rectangle { width: size, height: size }
+        Rectangle {
+            width: size,
+            height: size,
+        }
     }
 }
 
 fn main() {
     let sq = Rectangle::square(3);
+    println!("{:#?}", sq); // Returns
 }
 ```
 
