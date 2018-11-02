@@ -16,6 +16,17 @@ cargo new foobar
 let hello = "hello"; // Inline comment
 ```
 
+## Data types
+
+Length | Signed | Unsigned
+--------------------------
+8-bit   | i8    | u8
+16-bit  | i16   | u16
+32-bit  | i32   | u32
+64-bit  | i64   | u64
+128-bit | i128  | u128
+arch    | isize | usize
+
 ## Variables
 
 * Variables by default, are immutable (i.e. not subject to change)
@@ -121,6 +132,8 @@ fn main() {
         username: String::from("user2"),
         ..user1 // The syntax .. specifies that the remaining fields (from user1) be explicitly set on user2
     };
+
+    println!("{} {}", user2.email, user2.username);
 }
 ```
 
@@ -143,11 +156,14 @@ let origin = Point(0, 0, 0);
 fn main() {
     println!("Hello, world!");
 
-    another_function(5);
+    println!("{}", add_one(5));
 }
 
-fn another_function(x: i32) {
-    println!("The value of x is: {}", x);
+// Type annotated
+// Expects a 32 bit unsigned (negative or positive number)
+// Returns a 32 bit unsigned integer
+fn add_one(x: u32) -> u32 {
+    x + 1
 }
 ```
 
