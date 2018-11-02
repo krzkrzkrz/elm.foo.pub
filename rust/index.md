@@ -11,7 +11,7 @@ cargo new foobar
 ## Comments
 
 ```rust
-// Inline comments:
+// A comment here
 ```
 
 ## String concatenation
@@ -25,44 +25,90 @@ println!("{} {}", hello, world);
 
 ## Strings and characters
 
-```elm
--- This is a string with length of 1
+```rust
+// This is a string with length of 1
 "a"
 
--- This is a string with length of 3
+// This is a string with length of 3
 "abc"
 
--- This is a single character
+// This is a single character
 'a'
 
--- An empty string
+// An empty string
 ""
 
--- Error: Must contain 1 character
+// Error: Must contain 1 character
 'abc'
 
--- Error: Must contain 1 character
+// Error: Must contain 1 character
 ''
 ```
 
 ## Boolean & conditions
 
-* You write `True` and `False` instead of `true` and `false`
-* You write `/=` instead of `!==`
-* To negate values, you use `not`
+* `true` and `false`
+* The Boolean type in Rust is specified using `bool`
 
-```elm
-> pi == pi
-True
-> pi /= pi
-False
-> not (pi == pi)
-False
-> pi <= 0 || pi >= 10
-False
-> 3 < pi && pi < 4
-True
+```rust
+let is_one = 1 == 1;
+
+println!("{}", is_one); // true
+
+// With explicit type annotation
+let false_hood: bool = false;
 ```
+
+## Tuples
+
+* Grouping together some number of other values with a variety of types
+
+```rust
+let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+// Or
+let tup = (500, 6.4, 1);
+let (x, y, z) = tup;
+```
+
+## Arrays
+
+* Collection of similar types
+
+```rust
+let months: [String; 12] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+println!("{}", a[1]); // February
+```
+
+## Functions
+
+```rust
+fn main() {
+    println!("Hello, world!");
+
+    another_function(5);
+}
+
+fn another_function(x: i32) {
+    println!("The value of x is: {}", x);
+}
+```
+
+## Statements and expressions
+
+* Statements are instructions that perform some action and do not return a value
+* Statements end with `;`
+* Expressions evaluate to a resulting value
+* Expressions do not include an ending `;`
+
+```rust
+let y = 6; // Statement
+y + 1 // Expression
+```
+
+
+
+
 
 ## Conditions
 
