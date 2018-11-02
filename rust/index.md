@@ -22,6 +22,9 @@ let hello = "hello"; // Inline comment
 
 ### Integer types
 
+* Signed integers are positive or negative numbers
+* Unsigned are only positive numbers
+
 | Length  | Signed | Unsigned |
 |---------|--------|----------|
 | 8-bit   | i8     | u8       |
@@ -30,6 +33,39 @@ let hello = "hello"; // Inline comment
 | 64-bit  | i64    | u64      |
 | 128-bit | i128   | u128     |
 | arch    | isize  | usize    |
+
+### Floating-point types
+
+* Floating-point numbers are represented according to the IEEE-754 standard
+* The `f32` type is a single-precision float, and `f64` has double precision
+
+```rust
+    let x = 2.0; // f64
+    let y: f32 = 3.0; // f32
+```
+
+### Boolean types
+
+* `true` or `false`
+* The Boolean type in Rust is specified using `bool`
+
+```rust
+let t = true;
+
+// With explicit type annotation
+let likely_false: bool = false;
+```
+
+### Character types
+
+* Characters are specified with a single `'`
+* Can represent a lot more than just ASCII
+
+```rust
+  let c = 'z';
+  let heart_eyed_cat = '😻';
+```
+
 
 ## Variables
 
@@ -74,18 +110,12 @@ println!("{} {}", hello, world);
 ''
 ```
 
-## Boolean & conditions
-
-* `true` and `false`
-* The Boolean type in Rust is specified using `bool`
+## Conditions
 
 ```rust
 let is_one = 1 == 1;
 
 println!("{}", is_one); // true
-
-// With explicit type annotation
-let false_hood: bool = false;
 ```
 
 ## Tuples
