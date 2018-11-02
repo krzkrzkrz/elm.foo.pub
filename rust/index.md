@@ -116,11 +116,10 @@ fn main() {
 
     user1.email = String::from("user111@example.com");
 
-    // The syntax `..` specifies that the remaining fields not explicitly set should have the same value as the fields in the given instance
     let mut user2 = User {
         email: String::from("user2@example.com"),
         username: String::from("user2"),
-        ..user1
+        ..user1 // The syntax .. specifies that the remaining fields (from user1) be explicitly set on user2
     };
 }
 ```
