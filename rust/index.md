@@ -2,43 +2,25 @@
 
 [Rust](https://www.rust-lang.org) A systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety.
 
-## Elm REPL
+## New project
 
-To start Elm REPL, type `elm-repl` in a terminal
-
-```elm
--- Creating a function with multiple lines
--- Use \
--- And |, but dont forget to tab (2 spaces)
-
-> pluralize singular plural count = \
-|   if count == 1 then singular else plural
-<function>
-> pluralize "elf" "elves" 3
-"elves"
-> pluralize "elf" "elves" (round 0.9)
-"elf"
-> :exit
+```rust
+cargo new foobar
 ```
 
 ## Comments
 
-```elm
--- Inline comments:
--- Inline comment here
-```
-
-```elm
--- Block comments:
-{-
-  Block comment here
--}
+```rust
+// Inline comments:
 ```
 
 ## String concatenation
 
-```elm
-"Hello" ++ " world!"
+```rust
+let hello = "hello";
+let world = "world";
+
+println!("{} {}", hello, world);
 ```
 
 ## Strings and characters
