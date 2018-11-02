@@ -108,13 +108,20 @@ struct User {
 
 fn main() {
     let mut user1 = User {
-        email: String::from("foo@example.com"),
-        username: String::from("foo"),
+        email: String::from("user1@example.com"),
+        username: String::from("user1"),
         active: true,
         sign_in_count: 1,
     };
 
-    user1.email = String::from("foobar@example.com");
+    user1.email = String::from("user111@example.com");
+
+    // The syntax `..` specifies that the remaining fields not explicitly set should have the same value as the fields in the given instance
+    let mut user2 = User {
+        email: String::from("user2@example.com"),
+        username: String::from("user2"),
+        ..user1
+    };
 }
 ```
 
