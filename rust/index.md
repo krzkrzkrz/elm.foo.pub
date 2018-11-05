@@ -471,7 +471,20 @@ fn server() {
 }
 ```
 
+### Module filesystems
 
+* If a module named `foo` has no submodules, you should put the declarations for `foo` in a file named `foo.rs`
+* If a module named `foo` does have submodules, you should put the declarations for `foo` in a file named `foo/mod.rs`
+
+```rust
+└── foo
+    ├── bar.rs (contains the declarations in `foo::bar`)
+    └── mod.rs (contains the declarations in `foo`, including `mod bar`)
+```
+
+### Compiling modules
+
+Use `cargo build` instead of `cargo run` because we have a library crate rather than a binary crate
 
 
 
