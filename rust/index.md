@@ -410,7 +410,7 @@ else {
 * By default, functions, types, constants, and modules are private. The `pub` keyword makes an item public and therefore visible outside its namespace.
 * The `use` keyword brings modules, or the definitions inside modules, into scope
 
-```rust
+```console
 cargo new communicator --lib // Creates a new module
 cd communicator
 ```
@@ -476,7 +476,7 @@ fn server() {
 * If a module named `foo` has no submodules, you should put the declarations for `foo` in a file named `foo.rs`
 * If a module named `foo` does have submodules, you should put the declarations for `foo` in a file named `foo/mod.rs`
 
-```rust
+```console
 └── foo
     ├── bar.rs (contains the declarations in `foo::bar`)
     └── mod.rs (contains the declarations in `foo`, including `mod bar`)
