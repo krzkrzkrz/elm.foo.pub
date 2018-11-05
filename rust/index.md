@@ -508,7 +508,7 @@ fn main() {
     a::series::of::nested_modules(); // Returns "Here"
     a::private_function(); // Returns error: function `private_function` is private
 }
-```rust
+```
 
 ### Compiling modules
 
