@@ -4,7 +4,7 @@
 
 ## New project
 
-```rust
+```console
 cargo new foobar
 ```
 
@@ -482,9 +482,40 @@ fn server() {
     └── mod.rs (contains the declarations in `foo`, including `mod bar`)
 ```
 
+### Privacy / public rules
+
+```rust
+pub mod a {
+    pub fn public_function() {
+        println!("Here");
+    }
+
+    fn private_function() {
+        println!("Here");
+    }
+
+    pub mod series {
+        pub mod of {
+            pub fn nested_modules() {
+                println!("Here");
+            }
+        }
+    }
+}
+
+fn main() {
+    a::public_function(); // Returns "Here"
+    a::series::of::nested_modules(); // Returns "Here"
+    a::private_function(); // Returns error: function `private_function` is private
+}
+```rust
+
 ### Compiling modules
 
 Use `cargo build` instead of `cargo run` because we have a library crate rather than a binary crate
+
+
+
 
 
 
