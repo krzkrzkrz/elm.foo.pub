@@ -683,12 +683,6 @@ let mut scores = HashMap::new();
 scores.insert(String::from("Blue"), 10);
 scores.insert(String::from("Yellow"), 50);
 
-// Accesing a key in the hash map
-let team_name = String::from("Blue");
-let score = scores.get(&team_name);
-
-println!("{:?}", score); // Returns Some(10)
-
 // Iterate over a hash map
 for (key, value) in &scores {
     println!("{}: {}", key, value);
@@ -696,6 +690,23 @@ for (key, value) in &scores {
 // Returns:
 // Yellow: 50
 // Blue: 10
+
+// Accesing a key in the hash map
+let team_name = String::from("Blue");
+let score = scores.get(&team_name);
+
+println!("{:?}", score); // Returns Some(10)
+println!("{:?}", scores); // Returns {"Blue": 10, "Yellow": 50}
+
+// Overwriting a value
+let mut teams = HashMap::new();
+teams.insert(String::from("Rangers"), 2);
+teams.insert(String::from("Falcons"), 1);
+
+println!("{:?}", teams); // Returns {"Rangers": 2, "Falcons": 1}
+
+teams.insert(String::from("Falcons"), 2);
+println!("{:?}", teams); // Returns {"Rangers": 2, "Falcons": 1}
 ```
 
 
