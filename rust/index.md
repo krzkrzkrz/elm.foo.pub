@@ -160,7 +160,7 @@ Which looks something like:
 fn add(self, s: &str) -> String { ... }
 ```
 
-### Use `format!`
+### `format!`
 
 * The `format!` macro works in the same way as `println!`
 * Instead of printing the output to the screen, it returns a `String` with the contents
