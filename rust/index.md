@@ -582,7 +582,7 @@ fn main() {
 
 Use `cargo build` instead of `cargo run` because we have a library crate rather than a binary crate
 
-## Use keyword
+## `use` keyword
 
 * Shortens lengthy function calls by bringing the modules of the function you want to call into scope
 * Can be used against `enums`
@@ -621,7 +621,6 @@ fn main() {
 ```
 
 ## Vectors
-
 
 ```rust
 // Creating a new, empty vector to hold values of type i32
