@@ -78,7 +78,11 @@ let likely_false: bool = false;
   x = 6; // No error
 ```
 
-## String concatenation
+## Strings
+
+* In Rust, strings are a more complicated data structure, than is apparent in other programming languages
+
+### String concatenation
 
 ```rust
 let hello = "hello";
@@ -87,7 +91,7 @@ let world = "world";
 println!("{} {}", hello, world);
 ```
 
-## Strings and characters
+### Strings and characters
 
 ```rust
 // This is a string with length of 1
