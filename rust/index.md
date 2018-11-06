@@ -671,6 +671,33 @@ for i in &mut v {
 }
 ```
 
+## Hash maps
+
+* Useful when you want to look up data not by using an index, as you can with vectors, but by using a key that can be of any type
+
+```rust
+use std::collections::HashMap;
+
+let mut scores = HashMap::new();
+
+scores.insert(String::from("Blue"), 10);
+scores.insert(String::from("Yellow"), 50);
+
+// Accesing a key in the hash map
+let team_name = String::from("Blue");
+let score = scores.get(&team_name);
+
+println!("{:?}", score); // Returns Some(10)
+
+// Iterate over a hash map
+for (key, value) in &scores {
+    println!("{}: {}", key, value);
+}
+// Returns:
+// Yellow: 50
+// Blue: 10
+```
+
 
 
 
