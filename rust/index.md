@@ -109,6 +109,67 @@ println!("{} {}", hello, world);
 ''
 ```
 
+### More on strings
+
+```rust
+fn main() {
+    let mut s1 = "foo".to_string(); // Creates a String
+    s1.push_str("bar"); // Appends bar
+
+    // Create a String from a string literal
+    let mut s2 = String::from("initial contents");
+
+    // Creates a new, empty String
+    let mut s3 = String::new();
+
+    // Creates a reference to a String (&str)
+    // Returns error: no method named push_str found for type &str in the current scope
+    let mut s4 = "foo";
+    s4.push_str("bar");
+
+    // Above must be converted to a String first, before using push_str
+    let s5 = "foo";
+    let mut s6 = s5.to_string();
+    s6.push_str("ba"); // Appends ba
+    s6.push('r'); // Appends a single character
+    println!("{}", s6); // Returns "foobar"
+}
+```
+
+### Concatenating strings
+
+Using the `+` operator to combine `String`s
+
+```rust
+let s1 = String::from("Hello ");
+let s2 = String::from("amazing ");
+let s3 = String::from("world!");
+let s4 = s1 + &s2 + &s3; // s7 has been moved here and can no longer be used
+println!("{}", s4); // Returns "Hello amazing world!""
+```
+
+The reason `s1` is no longer valid after the addition and the reason we used a reference to `s2` has to do with the signature of the method `add`
+
+Which looks something like:
+
+```rust
+fn add(self, s: &str) -> String { ... }
+```
+
+### Use `format!`
+
+* The `format!` macro works in the same way as `println!`
+* Instead of printing the output to the screen, it returns a `String` with the contents
+* The version of the code using `format!` is much easier to read and doesn't take ownership of any of its parameters
+
+```rust
+let s1 = String::from("tic");
+let s2 = String::from("tac");
+let s3 = String::from("toe");
+
+let s = format!("{}-{}-{}", s1, s2, s3);
+```
+
 ## Conditions
 
 ```rust
@@ -503,9 +564,12 @@ pub mod a {
     }
 }
 
+use a::series::of;
+
 fn main() {
     a::public_function(); // Returns "Here"
     a::series::of::nested_modules(); // Returns "Here"
+    of::nested_modules()
     a::private_function(); // Returns error: function `private_function` is private
 }
 ```
@@ -514,6 +578,94 @@ fn main() {
 
 Use `cargo build` instead of `cargo run` because we have a library crate rather than a binary crate
 
+## Use keyword
+
+* Shortens lengthy function calls by bringing the modules of the function you want to call into scope
+* Can be used against `enums`
+
+```rust
+pub mod a {
+    pub mod really {
+        pub mod long {
+            pub mod list {
+                pub mod of {
+                    pub fn nested_modules() {
+                        println!("Here");
+                    }
+                }
+            }
+        }
+    }
+}
+
+enum TrafficLight {
+    Red,
+    Yellow,
+    Green,
+}
+
+use TrafficLight::{Red, Yellow};
+use a::really::long::list::of;
+
+fn main() {
+    of::nested_modules(); // Returns "Here"
+
+    let red = Red;
+    let yellow = Yellow;
+    let green = TrafficLight::Green;
+}
+```
+
+## Vectors
+
+
+```rust
+// Creating a new, empty vector to hold values of type i32
+let v: Vec<i32> = Vec::new();
+
+// Creating a new vector to hold values of type i32
+let v = vec![1, 2, 3];
+
+// Updating a vector
+let mut v = Vec::new();
+
+// Use the push method to add values to a vector
+v.push(5);
+v.push(6);
+v.push(7);
+v.push(8);
+
+// Reading elements
+let v = vec![1, 2, 3, 4, 5];
+
+let third: &i32 = &v[2]
+
+// Handling out of bounds
+let v = vec![1, 2, 3, 4, 5];
+let v_index = 10;
+
+match v.get(v_index) {
+    Some(_) => { println!("Reachable element at index: {}", v_index); },
+    None => { println!("Unreachable element at index: {}", v_index); }
+} // Returns None
+
+let does_not_exist = &v[100]; // Returns an error
+let does_not_exist = v.get(100); // Returns None
+
+// Iterating over a vector
+let v = vec![100, 32, 57];
+
+for i in &v {
+    println!("{}", i);
+}
+
+// Iterating over a vector and making changes
+let mut v = vec![100, 32, 57];
+
+for i in &mut v {
+    *i += 50;
+}
+```
 
 
 
