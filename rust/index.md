@@ -730,8 +730,24 @@ for word in text.split_whitespace() {
 println!("{:?}", map); // Returns: {"world": 2, "wonderful": 1, "hello": 1}
 ```
 
+## Error handling
 
+### `panic!`
 
+```rust
+panic!("crash and burn"); // Will cause an immediate panic
+```
+
+Running with backtrace:
+
+```rust
+let v = vec![1, 2, 3];
+v[99];
+```
+
+```shell
+$ env RUST_BACKTRACE=1 cargo run
+```
 
 
 
