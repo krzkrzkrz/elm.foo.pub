@@ -734,6 +734,8 @@ println!("{:?}", map); // Returns: {"world": 2, "wonderful": 1, "hello": 1}
 
 ### `panic!`
 
+Force a panic:
+
 ```rust
 panic!("crash and burn"); // Will cause an immediate panic
 ```
@@ -748,6 +750,65 @@ v[99];
 ```shell
 $ env RUST_BACKTRACE=1 cargo run
 ```
+
+### Recoverable Errors with `Result`
+
+If file doesn't exist, create it. And if creation succeeds, return file
+Else, panic with a message
+
+```rust
+use std::fs::File;
+use std::io::ErrorKind;
+
+fn main() {
+    let f = File::open("hello.txt");
+
+    let f = match f {
+        Ok(file) => file,
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create("hello.txt") {
+                Ok(fc) => fc,
+                Err(e) => panic!("Tried to create file but there was a problem: {:?}", e),
+            },
+            other_error => panic!("There was a problem opening the file: {:?}", other_error),
+        },
+    };
+}
+```
+
+### `.expect()`
+
+Returns: `thread 'main' panicked at 'Failed to open hello.txt: ...`
+
+```rust
+use std::fs::File;
+
+fn main() {
+    let f = File::open("hello.txt").expect("Failed to open hello.txt");
+}
+```
+
+## Generic types
+
+```rust
+
+```
+
+## 
+
+```rust
+```
+
+## 
+
+```rust
+```
+
+## 
+
+```rust
+```
+
 
 
 
