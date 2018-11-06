@@ -707,6 +707,27 @@ println!("{:?}", teams); // Returns {"Rangers": 2, "Falcons": 1}
 
 teams.insert(String::from("Falcons"), 2);
 println!("{:?}", teams); // Returns {"Rangers": 2, "Falcons": 1}
+
+// Insert if key has no value
+let mut groceries = HashMap::new();
+groceries.insert(String::from("Apples"), 1);
+
+groceries.entry(String::from("Apples")).or_insert(10);
+groceries.entry(String::from("Oranges")).or_insert(1);
+
+println!("{:?}", groceries); // Returns {"Apples": 1, "Oranges": 1}
+
+// A more complex example
+let text = "hello world wonderful world";
+
+let mut map = HashMap::new();
+
+for word in text.split_whitespace() {
+    let count = map.entry(word).or_insert(0); // Returns a mutable reference (&mut V)
+    *count += 1; // In order to assign to that value, we must first dereference count using the asterisk (*)
+}
+
+println!("{:?}", map); // Returns: {"world": 2, "wonderful": 1, "hello": 1}
 ```
 
 
