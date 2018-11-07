@@ -844,7 +844,6 @@ fn main() {
 * Functionality a particular type has and can share with other types
 
 ```rust
-// src/lib.rs
 pub trait Summary {
     fn summarize(&self) -> String;
 }
@@ -874,11 +873,53 @@ impl Summary for TwitterMessage {
         format!("{}: {}", self.username, self.content)
     }
 }
+
+let twitter_message = TwitterMessage {
+    username: String::from("foobar"),
+    content: String::from("Lorem ipsum dolor"),
+    reply: false,
+    retweet: false,
+};
+
+println!("1 new tweet: {}", twitter_message.summarize()); // Returns: "1 new tweet: foobar: Lorem ipsum dolor"
 ```
 
-## 
+### Trait defaults
 
 ```rust
+pub trait Summary {
+    fn summarize(&self) -> String {
+        String::from("(Read more...)")
+    }
+}
+
+let article = NewsArticle {
+    headline: String::from("Penguins win the Stanley Cup Championship!"),
+    location: String::from("Pittsburgh, PA, USA"),
+    author: String::from("Iceburgh"),
+    content: String::from("The Pittsburgh Penguins once again are the best
+    hockey team in the NHL."),
+};
+
+println!("New article available! {}", article.summarize()); // Returns: "New article available! (Read more...)"
+```
+
+### Traits within traits
+
+```rust
+pub trait Summary {
+    fn summarize_author(&self) -> String {
+        format!("@{}", self.username)
+    }
+
+    fn summarize(&self) -> String {
+        format!("(Read more from {}...)", self.summarize_author())
+    }
+}
+
+// ...
+
+println!("1 new tweet: {}", twitter_message.summarize());
 ```
 
 ## 
