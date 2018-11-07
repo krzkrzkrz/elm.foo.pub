@@ -922,6 +922,121 @@ pub trait Summary {
 println!("1 new tweet: {}", twitter_message.summarize());
 ```
 
+### Traits as arguments
+
+* The `impl Trait` syntax works for short examples
+
+```rust
+pub fn notify(item: impl Summary) {
+    println!("Breaking news! {}", item.summarize());
+}
+```
+
+### Trait bounds
+
+```rust
+// Both do the same
+// In general, you should use whatever form makes your code the most understandable.
+
+// Trait as arguments using impl:
+pub fn notify(item1: impl Summary, item2: impl Summary) {
+
+// More concise version via trait bounds:
+pub fn notify<T: Summary>(item1: T, item2: T) {
+```
+
+### Multiple trait bounds with `+`
+
+```rust
+// Use T: Summary + Display to say T can be any type that implements Summary and Display
+pub fn notify<T: Summary + Display>(item1: T, item2: T) {
+```
+
+### `where`
+
+Consider the following code, consists of several trait bounds. Making the function signature hard to read:
+
+```rust
+fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {
+```
+
+This is better:
+
+```rust
+fn some_function<T, U>(t: T, u: U) -> i32
+    where T: Display + Clone,
+          U: Clone + Debug
+{
+```
+
+## Generic Type Parameters, Trait Bounds, and Lifetimes Together
+
+Explanation follows in the sub-sections below
+
+```rust
+use std::fmt::Display;
+
+fn longest_with_an_announcement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
+    where T: Display
+{
+    println!("Announcement! {}", ann);
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+```
+
+### Lifetime annotations
+
+* Names of lifetime parameters must start with an apostrophe `'` and are usually all lowercase and very short
+* Most people use the name `'a`
+* We place lifetime parameter annotations after the `&` of a reference, using a space to separate the annotation from the reference's type
+
+```rust
+&i32        // A reference
+&'a i32     // A reference with an explicit lifetime
+&'a mut i32 // A mutable reference with an explicit lifetime
+```
+
+### Lifetime Annotations in Function Signatures
+
+```rust
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+```
+
+## 
+
+```rust
+```
+
+## 
+
+```rust
+```
+
+## 
+
+```rust
+```
+
+## 
+
+```rust
+```
+
+## 
+
+```rust
+```
+
 ## 
 
 ```rust
