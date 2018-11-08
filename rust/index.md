@@ -1,3 +1,33 @@
+# Katya's Blog
+
+## Cooking
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+## Beach
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+## Jopa
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Rust Journey
 
 [Rust](https://www.rust-lang.org) A systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety.
@@ -1012,14 +1042,47 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 }
 ```
 
-## 
+## Closures (anonymous functions)
+
+* The closure definition comes after the `=`
+* A closure has params (separated by `,`)
+* Body of closure is inside the `{}`. These are optional if the closure body is a single expression
+* Annotation types of the parameters or the return value are not required like `fn` functions
+* Closures are usually short and relevant only within a narrow context
 
 ```rust
+let foo = |bar, baz| {
+    // Body of clusure starts here
+    bar // Value returned
+};
+
+// Closure without {}, because the closure body has a single expression
+let foo = |bar, baz| bar + baz;
+
+// Adding optional type annotations of the parameter and return value types
+let foo = |bar: u32| -> u32 { ... };
 ```
 
-## 
+`foo` is the name of the closure
+Closure has two parameters `bar` and `baz`
+
+## Iterators
+
+* Iterators are lazy. Meaning they have no effect until you call methods that consume the iterator to use it up
+* All iterators implement a trait named `Iterator`
 
 ```rust
+let v1 = vec![1, 2, 3];
+
+let v1_iter = v1.iter();
+
+for val in v1_iter {
+    println!("Got: {}", val);
+}
+
+// Accessing the next() method iin the Iterator trait
+let mut v2_iter = v1.iter();
+println!("{:?}", v2_iter.next()); // Returns Some(1)
 ```
 
 ## 
