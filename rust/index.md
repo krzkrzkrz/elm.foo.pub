@@ -1131,4 +1131,6 @@ fn main() {
 
 # Todo
 
-- [] Read 19
+- [] Read 19 (read once)
+- [] Read 20 (useless)
+- [] Read 21 (skim once)
