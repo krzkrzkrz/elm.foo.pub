@@ -1126,11 +1126,11 @@ fn main() {
 
 # At the pool:
 
-- [] Implement chapter 17 - Implementing a State
-- [] Go through chapter 18.3
+- [ ] Implement chapter 17 - Implementing a State
+- [ ] Go through chapter 18.3
 
 # Todo
 
-- [] Read 19 (read once)
-- [] Read 20 (useless)
-- [] Read 21 (skim once)
+- [ ] Read 19 (read once)
+- [ ] Read 20 (useless)
+- [ ] Read 21 (skim once)
