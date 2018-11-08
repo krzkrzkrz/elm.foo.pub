@@ -1,4 +1,4 @@
-# Katya's Blog
+# Katya's Blog - My journey in the Philippines
 
 ## Cooking
 
