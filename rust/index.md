@@ -1127,8 +1127,7 @@ fn main() {
 # At the pool:
 
 - [ ] Implement chapter 17 - Implementing a State
-- [x] Go through chapter 18.3 - All the pattern syntax
-- [ ] Comet Haley
+- [ ] Go through chapter 18.3 - All the pattern syntax
 
 # Todo
 
