@@ -1122,8 +1122,13 @@ fn main() {
 ```rust
 ```
 
+---
+
 # At the pool:
 
 1) Implement chapter 17 - Implementing a State
 2) Go through chapter 18.3
-3) Read 19
+
+# Todo
+
+1) Read 19
