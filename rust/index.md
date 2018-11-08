@@ -622,6 +622,8 @@ fn main() {
 
 ## Vectors
 
+* Can only hold elements of one type
+
 ```rust
 // Creating a new, empty vector to hold values of type i32
 let v: Vec<i32> = Vec::new();
@@ -1055,6 +1057,46 @@ let mut v2_iter = v1.iter();
 println!("{:?}", v2_iter.next()); // Returns Some(1)
 ```
 
+## Smart pointers
+
+### Pointers
+
+* Common kind of pointer is called a reference: `&`
+* No special capabilities other than referring to data
+* References are pointers that only borrow data
+
+```rust
+&foo
+```
+
+### Smart pointers
+
+* Have additional metadata and capabilities
+* Smart pointers own the data they point to
+* `String`, `Struct` and `Vec<T>` are considered smart pointers. Because they own some memory and allow you to manipulate it
+
+```rust
+struct CustomSmartPointer {
+    data: String,
+}
+
+impl Drop for CustomSmartPointer {
+    fn drop(&mut self) {
+        println!("Dropping CustomSmartPointer with data `{}`!", self.data);
+    }
+}
+
+fn main() {
+    let c = CustomSmartPointer { data: String::from("my stuff") };
+    let d = CustomSmartPointer { data: String::from("other stuff") };
+    println!("CustomSmartPointers created.");
+}
+
+// Returns:
+// CustomSmartPointers created.
+// Dropping CustomSmartPointer with data `other stuff`!
+// Dropping CustomSmartPointer with data `my stuff`!
+```
 ## 
 
 ```rust
@@ -1080,16 +1122,8 @@ println!("{:?}", v2_iter.next()); // Returns Some(1)
 ```rust
 ```
 
-## 
-
-```rust
-```
-
-## 
-
-```rust
-```
 
 
-
-
+At the pool:
+1) Implement chapter 17
+2) Go through chapter 18.3
