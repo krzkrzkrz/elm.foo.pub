@@ -1147,7 +1147,7 @@ fn main() {
 
 # At the pool:
 
-- [ ] Implement chapter 17.3 - Implementing a State
+- [x] Implement chapter 17.3 - Implementing a State
 - [ ] Go through chapter 18.3 - All the pattern syntax
 
 # Todo
