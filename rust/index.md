@@ -355,6 +355,26 @@ fn add_one(x: u32) -> u32 {
 }
 ```
 
+### Advanced functions
+
+* This technique is useful when you want to pass a function you've already defined rather than defining a new closure
+
+```rust
+fn add_one(x: i32) -> i32 {
+    x + 1
+}
+
+fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
+    f(arg) + f(arg)
+}
+
+fn main() {
+    let answer = do_twice(add_one, 5);
+
+    println!("The answer is: {}", answer);
+}
+```
+
 ## Methods
 
 * Methods are similar to functions
@@ -1131,6 +1151,6 @@ fn main() {
 
 # Todo
 
-- [ ] Read 19 (read once)
+- [x] Read 19 (read once)
 - [ ] Read 20 (useless)
 - [ ] Read 21 (skim once)
