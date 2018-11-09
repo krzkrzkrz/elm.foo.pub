@@ -1117,6 +1117,7 @@ fn main() {
 // Dropping CustomSmartPointer with data `other stuff`!
 // Dropping CustomSmartPointer with data `my stuff`!
 ```
+
 ## 
 
 ```rust
