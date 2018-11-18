@@ -2,6 +2,12 @@
 
 [Rust](https://www.rust-lang.org) A systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety.
 
+## Install rustup
+
+```shell
+curl https://sh.rustup.rs -sSf | sh
+```
+
 ## New project
 
 ```console
@@ -811,7 +817,7 @@ fn main() {
 
 ## Generic types
 
-### In `struct`s
+### In `struct`'s
 
 ```rust
 struct Point<T, U> {
@@ -826,7 +832,7 @@ fn main() {
 }
 ```
 
-###  In `enum`s
+###  In `enum`'s
 
 ```rust
 enum Option<T> {
@@ -1147,6 +1153,8 @@ fn main() {
 
 # At the pool:
 
+- [ ] Create a blog
+- [ ] Create a shopping cart
 - [x] Implement chapter 17.3 - Implementing a State
 - [ ] Go through chapter 18.3 - All the pattern syntax
 
