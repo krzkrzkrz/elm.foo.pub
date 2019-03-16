@@ -191,6 +191,7 @@ println!("{}", is_one); // true
 ## Tuples
 
 * Grouping together some number of other values with a variety of types
+* Tuples are mainly used as a sort of minimal-drama struct type. i.e. to store width and height
 * Tuples allow constants as indices, like `t.4`. You cant write `t.i` or `t[i]` to get the `i`'th element
 
 ```rust
@@ -246,7 +247,7 @@ fn main() {
 
 ## Tuple structs
 
-* Like structs, but don’t have names associated with their fields
+* Like structs, but dont have names associated with their fields
 * They just have the types of the fields
 
 ```rust
