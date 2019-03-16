@@ -193,13 +193,13 @@ println!("{}", is_one); // true
 * Grouping together some number of other values with a variety of types
 
 ```rust
-let tup: (i32, f64, u8) = (500, 6.4, 1);
+let tup: (&str, i32, f64, u8) = ("foo", 500, 6.4, 1);
 
 // Or
 let tup = (500, 6.4, 1);
 let (x, y, z) = tup;
 
-println!("{}", tup.0) // Returns 500
+println!("{}", tup.0) // Returns foo
 ```
 
 ## Arrays
