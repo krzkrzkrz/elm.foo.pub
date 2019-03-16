@@ -196,8 +196,8 @@ println!("{}", is_one); // true
 let tup: (&str, i32, f64, u8) = ("foo", 500, 6.4, 1);
 
 // Or
-let tup = (500, 6.4, 1);
-let (x, y, z) = tup;
+let tup = ("foo", 500, 6.4, 1);
+let (x, y, z, w) = tup;
 
 println!("{}", tup.0) // Returns foo
 ```
