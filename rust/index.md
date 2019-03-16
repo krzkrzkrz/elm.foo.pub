@@ -191,6 +191,7 @@ println!("{}", is_one); // true
 ## Tuples
 
 * Grouping together some number of other values with a variety of types
+* Tuples allow constants as indices, like `t.4`. You cant write `t.i` or `t[i]` to get the `i`'th element
 
 ```rust
 let tup: (&str, i32, f64, u8) = ("foo", 500, 6.4, 1);
