@@ -4,7 +4,7 @@
 
 ## Suggested learning approach
 
-[A recommended approach](https://twitter.com/AndreaPessino/status/1042120425415700480):
+A [recommended approach](https://twitter.com/AndreaPessino/status/1042120425415700480). In summary:
 
 Rust is a practical solution to concrete problems that have hindered progress in software development for the last two decades.
 It is a leap forward in potential performance, scalability and productivity.
