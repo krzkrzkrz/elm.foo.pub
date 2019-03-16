@@ -37,7 +37,7 @@ more work to do.
 2. Read [RUST BY EXAMPLE](https://doc.rust-lang.org/rust-by-example). This is a great series of code snippets illustrating
 most of the language components. All examples are short, can be run directly (and even modified) in the books pages and they
 each illustrate a specific aspect of Rust programming. This will not take long study all of them, make sure you modify and play
-with each one, don't move on until you fully understand each chapter. After going through this, you'll be in a  good spot. Then 
+with each one, don't move on until you fully understand each chapter. After going through this, you'll be in a  good spot. Then
 it'll be time to bring it all home.
 
 3. Read [PROGRAMMING RUST](https://www.amazon.com/Programming-Rust-Fast-Systems-Development-ebook).
@@ -49,10 +49,19 @@ read the remaining chapters.
 4. This is where you start writing your own code. A few more bits of advice:
 
 - Use as basic a starting point as you can
+
 - Avoid binding to/integrating any existing non-Rust code, yours or otherwise
+
 - Try to write Rust code as idiomatic as you can. This is important in any language, but it is imperative in Rust
+
 - Follow the recommended coding standard, use the formatting and linting tools Rust provides (rustfmt and clippy, for example). Correct
-the warnings, do not ignore them. Do things the Rust way it's the best way to start and you can always diverge later on when you have enough experience to adequately assess the implications.
+the warnings, do not ignore them. Do things the Rust way it's the best way to start and you can always diverge later on when you
+have enough experience to adequately assess the implications.
+
+- Stop thinking in terms of the patterns you are used to. Do not try to replicate object oriented idioms with Rust. None of
+these abstractions are necessary or especially beneficial, and while they have their place the early exploration of a
+language that does not specifically support them is not it. Start (or go back to) thinking in terms of data layout and
+interface design, instead of reducing problems to fixed patterns
 
 ## Install rustup
 
