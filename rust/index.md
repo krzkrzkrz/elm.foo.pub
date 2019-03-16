@@ -20,9 +20,8 @@ innovative whole. Its design is cohesive, purposeful and visionary.
 It is different enough to require actual studying.
 
 At a glance Rust looks like a C++ cousin, but it really is not, and the resemblance might actually prove misleading for newcomers.
-This has nothing to do with ability or experience you just need to put in the time to acquire
-
-some new skills, otherwise before long you'll end up on Twitter complaining about how you are "fighting the borrow checker".
+This has nothing to do with ability or experience you just need to put in the time to acquire some new skills, otherwise before long
+you'll end up on Twitter complaining about how you are "fighting the borrow checker".
 
 So, here are a few suggestion on how to approach the language to ensure you have a greatest grasp in minimal time:
 
@@ -62,6 +61,8 @@ have enough experience to adequately assess the implications.
 these abstractions are necessary or especially beneficial, and while they have their place the early exploration of a
 language that does not specifically support them is not it. Start (or go back to) thinking in terms of data layout and
 interface design, instead of reducing problems to fixed patterns
+
+- And finally: give it time. It will take a while, but you will find that Rust was well worth the investment
 
 ## Install rustup
 
