@@ -207,6 +207,7 @@ println!("{}", tup.0) // Returns foo
 ## Arrays
 
 * Collection of similar types
+* You cant append new or remove elements
 
 ```rust
 let months: [&str; 12] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -471,12 +472,6 @@ let y = 6; // Statement
 y + 1 // Expression
 ```
 
-fn main() {
-    let home = IpAddr::V4(127, 0, 0, 1);
-    let loopback = IpAddr::V6(String::from("::1"));
-}
-```
-
 ## Conditions
 
 ```rust
@@ -651,6 +646,7 @@ fn main() {
 ## Vectors
 
 * Can only hold elements of one type
+* You can resize vectors: push / remove elements, append other vectors
 
 ```rust
 // Creating a new, empty vector to hold values of type i32
@@ -1136,6 +1132,10 @@ fn main() {
 // Dropping CustomSmartPointer with data `other stuff`!
 // Dropping CustomSmartPointer with data `my stuff`!
 ```
+
+### Raw pointers
+
+* Raw pointers are unsafe, because Rust makes no attempt to track what it points to
 
 ## 
 
