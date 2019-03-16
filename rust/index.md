@@ -26,7 +26,7 @@ some new skills, otherwise before long you'll end up on Twitter complaining abou
 
 So, here are a few suggestion on how to approach the language to ensure you have a greatest grasp in minimal time:
 
-1. First one is obvious: read the official [RUST PROGRAMMING LANGUAGE book](https://www.rust-lang.org). This is the best introductory
+1. First one is obvious: read the official [RUST PROGRAMMING LANGUAGE](https://doc.rust-lang.org/stable/book). This is the best introductory
 text you can get very easy to read, perfectly paced. Read the whole thing beginning to end, run and study the code samples, even when
 they seem trivial.
 
@@ -34,19 +34,25 @@ IMPORTANT: when you are done reading this book you might think I get it now. But
 nearly deep enough. Its a great intro but after this you will be smack in the middle of the "got the gist phase". You've got some
 more work to do.
 
-2. Read [RUST BY EXAMPLE](https://doc.rust-lang.org/rust-by-example) This is a great series of code snippets illustrating
+2. Read [RUST BY EXAMPLE](https://doc.rust-lang.org/rust-by-example). This is a great series of code snippets illustrating
 most of the language components. All examples are short, can be run directly (and even modified) in the books pages and they
 each illustrate a specific aspect of Rust programming. This will not take long study all of them, make sure you modify and play
 with each one, don't move on until you fully understand each chapter. After going through this, you'll be in a  good spot. Then 
 it'll be time to bring it all home.
 
-3. Read [PROGRAMMING RUST](https://www.amazon.com/Programming-Rust-Fast-Systems-Development-ebook/dp/B077NSY211)
+3. Read [PROGRAMMING RUST](https://www.amazon.com/Programming-Rust-Fast-Systems-Development-ebook).
 This is a fantastic book and the perfect finishing touch in your Rust education. It goes deeper than the previous two,
 and having the others under your belt beforehand will make it more effective and much easier to go through. You don't really
 need to finish the book before moving on, just go over the first 6 to 8 chapters and then start Step 4 while continuing to
 read the remaining chapters.
 
-4. This is where you start writing your own code.
+4. This is where you start writing your own code. A few more bits of advice:
+
+- Use as basic a starting point as you can
+- Avoid binding to/integrating any existing non-Rust code, yours or otherwise
+- Try to write Rust code as idiomatic as you can. This is important in any language, but it is imperative in Rust
+- Follow the recommended coding standard, use the formatting and linting tools Rust provides (rustfmt and clippy, for example). Correct
+the warnings, do not ignore them. Do things the Rust way it's the best way to start and you can always diverge later on when you have enough experience to adequately assess the implications.
 
 ## Install rustup
 
