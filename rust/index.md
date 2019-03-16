@@ -1085,9 +1085,9 @@ let mut v2_iter = v1.iter();
 println!("{:?}", v2_iter.next()); // Returns Some(1)
 ```
 
-## Smart pointers
+## Pointers
 
-### Pointers
+### Reference pointers
 
 * Common kind of pointer is called a reference: `&`
 * No special capabilities other than referring to data
@@ -1096,6 +1096,17 @@ println!("{:?}", v2_iter.next()); // Returns Some(1)
 ```rust
 &foo
 ```
+
+### Box pointers
+
+* The easiest way to allocate value in the heap is to use a `Box::new`
+
+```rust
+let t = (12, "eggs");
+let b = Box::new(t); // Will allocate tuple in the heap
+```
+
+The type of `t` is `(i32, &str)`, so the type of `b` is `Box<(i32, &str)>`
 
 ### Smart pointers
 
