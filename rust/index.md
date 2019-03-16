@@ -1,6 +1,7 @@
 # Rust Journey
 
 [Rust](https://www.rust-lang.org) A systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety.
+[A recommended approach](https://twitter.com/AndreaPessino/status/1042120425415700480) to learning Rust
 
 ## Install rustup
 
