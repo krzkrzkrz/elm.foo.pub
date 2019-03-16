@@ -214,6 +214,11 @@ let months: [&str; 12] = ["January", "February", "March", "April", "May", "June"
 println!("{}", a[1]); // February
 ```
 
+// Or
+```rust
+let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+```
+
 ## Structs
 
 * Collection of different types
@@ -694,6 +699,9 @@ let mut v = vec![100, 32, 57];
 for i in &mut v {
     *i += 50;
 }
+
+// Building a vector using an iterator
+let v: Vec<i32> = (0..5).collect();
 ```
 
 ## Hash maps
