@@ -1,7 +1,32 @@
 # Rust Journey
 
 [Rust](https://www.rust-lang.org) A systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety.
-[A recommended approach](https://twitter.com/AndreaPessino/status/1042120425415700480) to learning Rust
+
+## Suggested learning approach
+
+[A recommended approach](https://twitter.com/AndreaPessino/status/1042120425415700480):
+
+Rust is a practical solution to concrete problems that have hindered progress in software development for the last two decades.
+It is a leap forward in potential performance, scalability and productivity.
+
+When experienced coders try out a new language the process usually goes something like this: skim the docs as quickly as possible,
+go over some samples until one has got the gist, write some code; the expectation is that details and deep concepts wi
+reveal themselves with use and that writing code is going to be the quickest way to familiarize oneself with the new tool.
+If you are learning Python, Java, JS, C#, Go, etc. this approach works well, mostly because these languages are basically all
+the same. If, on the other hand, you approach Rust like this you will probably be frustrated. There is nothing especially difficult
+about Rust (no more than C/C++, at least), but Rust combines novel concepts and refined ideas from other languages into a surprisingly
+innovative whole. Its design is cohesive, purposeful and visionary.
+
+It is different enough to require actual studying.
+
+At a glance Rust looks like a C++ cousin, but it really is not, and the resemblance might actually prove misleading for newcomers.
+This has nothing to do with ability or experience you just need to put in the time to acquire
+
+some new skills, otherwise before long you'll end up on Twitter complaining about how you are "fighting the borrow checker".
+
+So, here are a few suggestion on how to approach the language to ensure you have a greatest grasp in minimal time:
+
+1) First one is obvious: read the official [RUST PROGRAMMING LANGUAGE book](https://www.rust-lang.org). This is the best introductory
 
 ## Install rustup
 
@@ -704,6 +729,10 @@ for i in &mut v {
 // Building a vector using an iterator
 let v: Vec<i32> = (0..5).collect();
 ```
+
+## Slices
+
+* TODO
 
 ## Hash maps
 
