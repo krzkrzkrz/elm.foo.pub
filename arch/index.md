@@ -28,6 +28,71 @@ To allow all users to execute the `sudo` command. Make sure the following is unc
 wheel ALL=(ALL) ALL
 ```
 
+## AUR helper
+
+Use an AUR helper to instal AUR packages easier
+
+
+```shell
+git clone https://aur.archlinux.org/yay.git
+cd yay/
+makepkg -sri
+```
+
+Install a package:
+
+```shell
+yay -S ttf-iosveka
+```
+
+Search for a package name
+
+```shell
+yay -Ss ttf-iosveka
+```
+
+Get more information about a package
+
+```shell
+yay -Si ttf-iosveka
+```
+
+Update all packages AUR and offical
+
+```shell
+yay -Syu
+```
+
+List all packages that require an update
+
+```shell
+yay -Pu
+```
+
+Cleaning unwanted dependencies
+
+```shell
+yay -Yc
+```
+
+To remove / uninstall package
+
+```shell
+yay -R ttf-iosveka
+```
+
+To remove / uninstall package and dependencies
+
+```shell
+yay -Rs ttf-iosveka
+```
+
+
+
+## Font scaling
+
+Instead of modifying X's dpi settings. Just modify the font sizes for each application
+
 ## Swap file
 
 [Swap](https://wiki.archlinux.org/index.php/Swap)
