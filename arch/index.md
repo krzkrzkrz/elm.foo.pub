@@ -14,13 +14,13 @@ sudo pacmane -Syyyu
 sudo pacman -S vim
 ```
 
-Python is needed for some Vim plugns to work properly:
+### Python is needed for some Vim plugns to work properly:
 
 ```shell
 sudo pacman -S python
 ```
 
-Configure Vim with a package manager (Plug):
+### Configure Vim with a package manager (Plug):
 
 ```shell
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
