@@ -10,7 +10,7 @@ sudo pacmane -Syyyu
 
 ## Sudo
 
-https://wiki.archlinux.org/index.php/Sudo
+[Sudo](https://wiki.archlinux.org/index.php/Sudo)
 
 Allow users to execute the `sudo` command. i.e. `pacman -S vim`
 
@@ -30,6 +30,8 @@ wheel ALL=(ALL) ALL
 
 ## Swap file
 
+[Swap](https://wiki.archlinux.org/index.php/Swap)
+
 TODO
 
 ## Setup .xinitrc
@@ -37,6 +39,10 @@ TODO
 TODO
 
 ## Reconfiguring keys
+
+TODO
+
+## Fix paste
 
 TODO
 
@@ -59,7 +65,20 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
+### Install FZF
+
 ```shell
+sudo pacman -S fzf
 ```
 
+
+
+
+
+
+
+
+
+```shell
+```
 
