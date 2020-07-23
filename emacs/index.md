@@ -18,6 +18,12 @@ For example `C-f`: hold the `CONTROL` key and type `f`
 C-h t
 ```
 
+To exi the tutorial:
+
+```
+C-x k <Return>
+```
+
 ## Close Emacs
 
 ```
