@@ -18,7 +18,7 @@ For example `C-f`: hold the `CONTROL` key and type `f`
 C-h t
 ```
 
-To exi the tutorial:
+To exit the tutorial:
 
 ```
 C-x k <Return>
@@ -35,6 +35,54 @@ C-x C-c
 ```
 C-g
 ```
+
+## Move forward / backward screen
+
+Forward:
+
+```
+C-v
+```
+
+Backward:
+```
+M-v
+```
+
+## 
+
+```
+```
+
+## 
+
+```
+```
+
+## 
+
+```
+```
+
+## 
+
+```
+```
+
+## 
+
+```
+```
+
+
+
+
+
+## 
+
+```
+```
+
 
 
 
