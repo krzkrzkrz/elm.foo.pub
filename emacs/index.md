@@ -116,11 +116,13 @@ Is the ability of reinserting kill characters/text at the current cursor positio
 
 `M-y` goes through yank history
 
-## Undo / redo
+## Undo
 
 `C-/` undo
 
-`M-/` redo
+TODO:
+
+Continue from FILES, in tutorial
 
 ## 
 
