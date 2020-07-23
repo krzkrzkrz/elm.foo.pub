@@ -94,10 +94,49 @@ C-h k C-f
 
 To close the documentation `C-x 1`
 
+## Delete by words or lines
+
+`<DEL>` Delete characters before cursor
+
+`C-d` Delete character on the cursor
+
+`M-<DEL>` Kill word before cursor
+
+`M-d` Kill word after cursor
+
+`C-k` Kill from cursor position, to end of line
+
+`M-k` Kill to the end of current sentence
+
+## Yanking
+
+Is the ability of reinserting kill characters/text at the current cursor position. Also known as `cutting` and `pasting`
+
+`C-y` yanks last killed character/text
+
+`M-y` goes through yank history
+
+## Undo / redo
+
+`C-/` undo
+
+`M-/` redo
+
 ## 
 
 ```
 ```
+
+## 
+
+```
+```
+
+## 
+
+```
+```
+
 
 
 
