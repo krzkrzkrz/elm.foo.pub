@@ -66,24 +66,33 @@ C-g
 
 `M-e` move to end of sentence
 
+`M-<` move to start of document
+
+`M->` move to end of document
+
 ## A note on `C-` and `M-`
 
 Very often, `Meta` characters are used for operations related to the units defined by language (words, sentences, paragraphs)
 
 `Control` characters operate on basic units (characters, lines, etc)
 
-```
-```
-
-## 
+## Repeat count
 
 ```
+C-u
 ```
 
-## 
+For example: `C-u 8 C-f` moves cursor forward 8 times
+
+## Open help documentation
+
+To open documentation about the `C-f` command:
 
 ```
+C-h k C-f
 ```
+
+To close the documentation `C-x 1`
 
 ## 
 
