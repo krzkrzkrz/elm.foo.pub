@@ -36,18 +36,11 @@ C-x C-c
 C-g
 ```
 
-## Move forward / backward screen
+## Viewing screenfuls
 
-Forward:
-
-```
-C-v
-```
-
-Backward:
-```
-M-v
-```
+`C-v` forward
+`M-v` backward
+`C-l` Centers screen to cursor. Pressing 2nd time, will move to the top of screen, 3rd to bottom of screen
 
 ## 
 
