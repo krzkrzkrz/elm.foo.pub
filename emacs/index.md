@@ -39,23 +39,31 @@ C-g
 ## Screen contol
 
 `C-v` forward
+
 `M-v` backward
+
 `C-l` Centers screen to cursor. Pressing 2nd time, will move to the top of screen, 3rd to bottom of screen
 
 ## Cursor control
 
 `C-p` move to previous line
+
 `C-n` move to next line
+
 `C-f` move forward one character
+
 `C-b` move backward one character
 
 `M-f` move forward one word
+
 `M-b` move backword one word
 
 `C-a` move to beginning of line
+
 `C-e` move to end of line
 
 `M-a` move to beginning of sentence
+
 `M-e` move to end of sentence
 
 ## A note on `C-` and `M-`
