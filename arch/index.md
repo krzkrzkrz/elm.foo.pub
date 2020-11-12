@@ -16,9 +16,9 @@ Connect to the internet via `iwct`
 iwctl
 [iwd]# help
 [iwd]# device list
-[iwd]# wlan0 device scan
-[iwd]# wlan0 device get-networks
-[iwd]# wlan0 device connect "How you doing?"
+[iwd]# station wlan0 scan
+[iwd]# station wlan0 get-networks
+[iwd]# station wlan0 connect "How you doing?"
 ```
 
 Test internet connection
@@ -47,7 +47,7 @@ Command (m for help): d
 Create a new GPT disk label
 
 ```shell
-Command (m for help): d
+Command (m for help): g
 ```
 
 Create an EFI system partition
@@ -97,7 +97,7 @@ mkfs.ext4 /dev/nvme0n1p2
 Mount the root file systems
 
 ```shell
-mount /dev/nvme0np1 /mnt
+mount /dev/nvme0np2 /mnt
 ```
 
 Mount the EFI file systems
@@ -137,17 +137,144 @@ Run `hwclock` to generate `/etc/adjtime`:
 hwclock --systohc
 ```
 
+Edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`. Generate the locales by running:
+
 ```shell
+locale-gen
+```
+
+Create the `locale.conf` file, and set the `LANG` variable accordingly:
+
+```shell
+vim /etc/locale.conf
+LANG=en_US.UTF-8
+```
+
+Create the hostname file:
+
+```shell
+vim /etc/hostname
+foopub
+```
+
+Add matching entries to hosts:
+
+```shell
+/etc/hosts
+127.0.0.1 localhost
+::1 localhost
+127.0.1.1 foopub.localdomain myhostname
+```
+
+Creating a new initramfs is usually not required, because mkinitcpio was run on installation of the kernel package with pacstrap.
+But just run it anyways
+
+```shell
+mkinitcpio -P
+```
+
+Set the root password
+
+```shell
+passwd
+```
+
+Install a bootloader: GRUB
+
+```shell
+pacman -S grub efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ```shell
+pacman -S grub efibootmgr
+mkdir /boot/efi
+mount /dev/nvme0np1p1 /boot/efi
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+Create a swapfile
 
 ```shell
+dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
 ```
 
-``
+Make sure this is inserted at the end of `/etc/fstab`
+
+```shell
+/swapfile none swap defaults 0 0
+```
+
+Install Intel graphics card
+
+```shell
+pacman -S mesa
+```
+
+Install Intel microcode
+
+```shell
+pacman -S intel-ucode
+```
+
+`grub-mkconfig` will automatically detect the microcode update and configure GRUB appropriately. After installing the microcode package, regenerate the GRUB config to activate loading the microcode update by running:
+
+```shell
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Install `sudo`
+
+```shell
+pacman -S sudo
+```
+
+Create a user
+
+```shell
+useradd -m -g users -G wheel chris
+passwd chris
+```
+
+Give new user access to sudo command
+
+```shell
+EDITOR=vim visudo
+```
+
+Uncomment `%wheel ALL=(ALL) ALL`
+
+Exit `arch-chroot`
+
+```shell
+exit
+```
+
+Unmount all the partitions with
+
+```shell
+umount -R /mnt
+```
+
+-OR-
+
+```shell
+umount -a
+```
+
+Its ok to see get some errors here or busy status. For the most part, we are all set
+
+Shutdown, take USB drive out and reboot
+
+```shell
+poweroff
+```
+
 
 
 
