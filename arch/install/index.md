@@ -230,7 +230,7 @@ Make sure this is inserted at the end of `/etc/fstab`:
 /swapfile none swap defaults 0 0
 ```
 
-## Install Intel graphics card
+## Install Intel graphics card related drivers
 
 ```shell
 pacman -S mesa
