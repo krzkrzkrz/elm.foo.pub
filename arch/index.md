@@ -16,7 +16,6 @@ Connect to the internet via `iwct`
 iwctl
 [iwd]# help
 [iwd]# device list
-[iwd]# station wlan0 scan
 [iwd]# station wlan0 get-networks
 [iwd]# station wlan0 connect "How you doing?"
 ```
@@ -73,7 +72,7 @@ Last sector (..., default ...): <enter>
 Do you want to remove the signature? y
 
 Command (m for help): t
-Partition type (type L to list all types): 24 (Linux root (x86-64))
+Partition type (type L to list all types): 20 (Linux filesystem)
 ```
 
 Write the partitions
@@ -100,7 +99,9 @@ Mount the root file systems
 mount /dev/nvme0n1p2 /mnt
 ```
 
-Mount the EFI file systems
+[Dont need to do this] Mount the EFI file systems
+
+Since you will do this in arch-chroot anyways during the `GRUB` installation process
 
 ```shell
 mkdir /mnt/boot
@@ -166,7 +167,7 @@ Add matching entries to hosts:
 127.0.1.1 foopub.localdomain myhostname
 ```
 
-Creating a new initramfs is usually not required, because mkinitcpio was run on installation of the kernel package with pacstrap.
+[Dont need to do this] Creating a new initramfs is usually not required, because mkinitcpio was run on installation of the kernel package with pacstrap.
 But just run it anyways
 
 ```shell
@@ -180,6 +181,26 @@ passwd
 ```
 
 Install a bootloader: GRUB
+
+Could work:
+
+```shell
+pacman -S grub efibootmgr dosfstools os-prober mtools
+mkdir /boot/EFI
+mount /dev/nvme0np1p1 /boot/EFI
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Could work:
+
+```shell
+pacman -S grub efibootmgr
+mkdir /boot/efi
+mount /dev/nvme0np1p1 /boot/efi
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 Could work:
 
@@ -269,6 +290,12 @@ umount -R /mnt
 
 ```shell
 umount -a
+```
+
+-OR- if mount still doesnt work
+
+```shell
+umount -l /mnt
 ```
 
 Its ok to see get some errors here or busy status. For the most part, we are all set
