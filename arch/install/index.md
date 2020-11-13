@@ -143,13 +143,15 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime
 ```
 
-## Run `hwclock` to generate `/etc/adjtime`:
+Run `hwclock` to generate `/etc/adjtime`:
 
 ```shell
 hwclock --systohc
 ```
 
-## Edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`. Generate the locales by running:
+## Localization
+
+Edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`. Generate the locales by running:
 
 ```shell
 locale-gen
