@@ -2,7 +2,7 @@
 
 [Official installation guide](https://wiki.archlinux.org/index.php/installation_guide)
 
-Some personal notes that follow the steps on the official guide
+Some personal notes that follow the steps on the official guide. Follow this guide from top to bottom.
 
 ## Verify the boot mode
 
@@ -12,7 +12,9 @@ If the command shows the directory without error, then the system is booted in U
 ls /sys/firmware/efi/efivars
 ```
 
-## Connect to the internet via `iwct`
+## Connect to the internet
+
+We will use `iwct`
 
 ```shell
 iwctl
@@ -29,7 +31,9 @@ iwctl
 ping archlinux.org
 ```
 
-## Update the system clock to ensure the system clock is accurate:
+## Update the system clock
+
+To ensure the system clock is accurate:
 
 ```shell
 timedatectl set-ntp true
