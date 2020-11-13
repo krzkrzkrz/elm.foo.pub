@@ -97,14 +97,14 @@ mkfs.ext4 /dev/nvme0n1p2
 Mount the root file systems
 
 ```shell
-mount /dev/nvme0np2 /mnt
+mount /dev/nvme0n1p2 /mnt
 ```
 
 Mount the EFI file systems
 
 ```shell
 mkdir /mnt/efi
-mount /dev/nvme0np1 /mnt/efi
+mount /dev/nvme0n1p1 /mnt/efi
 ```
 
 Install essential packages
@@ -181,17 +181,21 @@ passwd
 
 Install a bootloader: GRUB
 
-```shell
-pacman -S grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
-```
+Could work:
 
 ```shell
 pacman -S grub efibootmgr
 mkdir /boot/efi
 mount /dev/nvme0np1p1 /boot/efi
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Might not work:
+
+```shell
+pacman -S grub efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
