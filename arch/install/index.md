@@ -159,7 +159,7 @@ Edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`. Generate the locales b
 locale-gen
 ```
 
-Create the `locale.conf` file, and set the `LANG` variable accordingly:
+Create the `locale.conf` file, and set the `LANG` variable accordingly.
 
 `vim /etc/locale.conf`, and place the following inside:
 
