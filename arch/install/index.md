@@ -131,7 +131,7 @@ pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-## Change root into the new system:
+## Change root into the new system
 
 ```shell
 arch-chroot /mnt
