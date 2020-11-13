@@ -137,7 +137,9 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
-## Set the time zone
+## Time zone configuration
+
+Set the time zone
 
 ```shell
 ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime
