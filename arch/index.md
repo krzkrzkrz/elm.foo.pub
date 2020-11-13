@@ -103,8 +103,8 @@ mount /dev/nvme0n1p2 /mnt
 Mount the EFI file systems
 
 ```shell
-mkdir /mnt/efi
-mount /dev/nvme0n1p1 /mnt/efi
+mkdir /mnt/boot
+mount /dev/nvme0n1p1 /mnt/boot
 ```
 
 Install essential packages
