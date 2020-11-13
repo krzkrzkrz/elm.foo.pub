@@ -297,7 +297,7 @@ umount -l /mnt
 
 Its ok to see get some errors here or busy status. For the most part, we are all set
 
-Shutdown, take USB drive out and reboot
+Shutdown, unplug USB drive and reboot
 
 ```shell
 poweroff
