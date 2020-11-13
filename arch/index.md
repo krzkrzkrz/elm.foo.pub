@@ -16,6 +16,7 @@ Connect to the internet via `iwct`
 iwctl
 [iwd]# help
 [iwd]# device list
+[iwd]# station wlan0 scan
 [iwd]# station wlan0 get-networks
 [iwd]# station wlan0 connect "How you doing?"
 ```
@@ -99,7 +100,7 @@ Mount the root file systems
 mount /dev/nvme0n1p2 /mnt
 ```
 
-[Dont need to do this] Mount the EFI file systems
+**[Dont need to do this]** Mount the EFI file systems
 
 Since you will do this in arch-chroot anyways during the `GRUB` installation process
 
@@ -167,7 +168,7 @@ Add matching entries to hosts:
 127.0.1.1 foopub.localdomain myhostname
 ```
 
-[Dont need to do this] Creating a new initramfs is usually not required, because mkinitcpio was run on installation of the kernel package with pacstrap.
+**[Dont need to do this]** Creating a new initramfs is usually not required, because mkinitcpio was run on installation of the kernel package with pacstrap.
 But just run it anyways
 
 ```shell
