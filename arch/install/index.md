@@ -1,6 +1,8 @@
 # Arch installation
 
-[Installation guide](https://wiki.archlinux.org/index.php/installation_guide)
+[Official installation guide](https://wiki.archlinux.org/index.php/installation_guide)
+
+Some personal notes that follow the steps on the official guide
 
 ## Verify the boot mode
 
