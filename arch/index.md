@@ -183,41 +183,11 @@ passwd
 
 Install a bootloader: GRUB
 
-Could work:
-
 ```shell
 pacman -S grub efibootmgr dosfstools os-prober mtools
 mkdir /boot/EFI
 mount /dev/nvme0np1p1 /boot/EFI
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
-grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-Could work:
-
-```shell
-pacman -S grub efibootmgr
-mkdir /boot/efi
-mount /dev/nvme0np1p1 /boot/efi
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
-grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-Could work:
-
-```shell
-pacman -S grub efibootmgr
-mkdir /boot/efi
-mount /dev/nvme0np1p1 /boot/efi
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-Might not work:
-
-```shell
-pacman -S grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
