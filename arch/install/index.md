@@ -1,5 +1,7 @@
 # Arch installation
 
+[Installation guide](https://wiki.archlinux.org/index.php/installation_guide)
+
 ## Verify the boot mode
 
 If the command shows the directory without error, then the system is booted in UEFI mode

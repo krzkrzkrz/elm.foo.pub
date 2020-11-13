@@ -2,6 +2,8 @@
 
 [Arch](https://archlinux.org) A simple light-weight Linux distribution
 
+[Installation notes](http://foo.pub/arch/install)
+
 ## Update mirrors and packages
 
 ```shell
