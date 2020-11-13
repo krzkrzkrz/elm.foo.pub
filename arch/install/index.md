@@ -151,22 +151,25 @@ locale-gen
 
 ## Create the `locale.conf` file, and set the `LANG` variable accordingly:
 
+`vim /etc/locale.conf`, and place the following inside:
+
 ```shell
-vim /etc/locale.conf
 LANG=en_US.UTF-8
 ```
 
 ## Create the hostname file:
 
+`vim /etc/hostname`, and place the following inside:
+
 ```shell
-vim /etc/hostname
 foopub
 ```
 
 ## Add matching entries to hosts:
 
+`vim /etc/hosts`, and place the following inside:
+
 ```shell
-/etc/hosts
 127.0.0.1 localhost
 ::1 localhost
 127.0.1.1 foopub.localdomain myhostname
