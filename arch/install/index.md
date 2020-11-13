@@ -25,7 +25,7 @@ iwctl
 [iwd]# station wlan0 connect "How you doing?"
 ```
 
-## Test internet connection
+## Test the internet connection
 
 ```shell
 ping archlinux.org
