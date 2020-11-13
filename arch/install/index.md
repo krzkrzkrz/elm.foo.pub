@@ -114,7 +114,7 @@ mkfs.ext4 /dev/nvme0n1p2
 mount /dev/nvme0n1p2 /mnt
 ```
 
-**[Dont need to do this]** Mount the EFI file systems
+**[Don't need to do this]** Mount the EFI file systems
 
 Since you will do this in arch-chroot anyways during the `GRUB` installation process
 
@@ -193,7 +193,7 @@ Add matching entries to hosts:
 
 ## Creating a new initramfs
 
-**[Dont need to do this]** is usually not required, because mkinitcpio was run on installation of the kernel package with pacstrap.
+**[Don't need to do this]** is usually not required, because mkinitcpio was run on installation of the kernel package with pacstrap.
 
 ```shell
 mkinitcpio -P
