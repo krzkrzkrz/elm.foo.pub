@@ -157,7 +157,7 @@ Edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`. Generate the locales b
 locale-gen
 ```
 
-## Create the `locale.conf` file, and set the `LANG` variable accordingly:
+Create the `locale.conf` file, and set the `LANG` variable accordingly:
 
 `vim /etc/locale.conf`, and place the following inside:
 
@@ -165,7 +165,9 @@ locale-gen
 LANG=en_US.UTF-8
 ```
 
-## Create the hostname file:
+## Network configuration
+
+Create the hostname file:
 
 `vim /etc/hostname`, and place the following inside:
 
@@ -173,7 +175,7 @@ LANG=en_US.UTF-8
 foopub
 ```
 
-## Add matching entries to hosts:
+Add matching entries to hosts:
 
 `vim /etc/hosts`, and place the following inside:
 
@@ -216,7 +218,7 @@ mkswap /swapfile
 swapon /swapfile
 ```
 
-Make sure this is inserted at the end of `/etc/fstab`
+Make sure this is inserted at the end of `/etc/fstab`:
 
 ```shell
 /swapfile none swap defaults 0 0
