@@ -242,7 +242,7 @@ pacman -S mesa
 pacman -S intel-ucode
 ```
 
-`grub-mkconfig` will automatically detect the microcode update and configure GRUB appropriately. After installing the microcode package, regenerate the GRUB config to activate loading the microcode update by running:
+`grub-mkconfig` will automatically detect the microcode update and configure GRUB appropriately. After installing the microcode package, regenerate the `GRUB` config to activate loading the microcode update by running:
 
 ```shell
 grub-mkconfig -o /boot/grub/grub.cfg
