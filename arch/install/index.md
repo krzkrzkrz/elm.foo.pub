@@ -48,6 +48,8 @@ Delete all partitions first
 Command (m for help): d
 ```
 
+-OR-
+
 Create a new GPT disk label
 
 ```shell
