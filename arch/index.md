@@ -1,6 +1,6 @@
 # Arch Journey
 
-[Arch](https://archlinux.org) A simple light-weight Linux distribution
+[Arch](https://archlinux.org), a simple light-weight Linux distribution
 
 [Installation notes](http://foo.pub/arch/install)
 
