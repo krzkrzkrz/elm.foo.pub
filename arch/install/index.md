@@ -289,7 +289,7 @@ umount -R /mnt
 umount -a
 ```
 
--OR- if mount still doesnt work
+-OR- if `umount` still doesnt work
 
 ```shell
 umount -l /mnt
