@@ -1,12 +1,14 @@
 # Arch installation
 
-Verify the boot mode. If the command shows the directory without error, then the system is booted in UEFI mode
+## Verify the boot mode
+
+If the command shows the directory without error, then the system is booted in UEFI mode
 
 ```shell
 ls /sys/firmware/efi/efivars
 ```
 
-Connect to the internet via `iwct`
+## Connect to the internet via `iwct`
 
 ```shell
 iwctl
@@ -17,17 +19,19 @@ iwctl
 [iwd]# station wlan0 connect "How you doing?"
 ```
 
-Test internet connection
+## Test internet connection
 
 ```shell
 ping archlinux.org
 ```
 
-Update the system clock to ensure the system clock is accurate:
+## Update the system clock to ensure the system clock is accurate:
 
 ```shell
 timedatectl set-ntp true
 ```
+
+## Create partitions
 
 ```shell
 fdisk -l
@@ -78,19 +82,19 @@ Write the partitions
 Command (m for help): w
 ```
 
-Format the EFI system partition
+## Format the EFI system partition
 
 ```shell
 mkfs.fat -F32 /dev/nvme0n1p1
 ```
 
-Format the root partition
+## Format the root partition
 
 ```shell
 mkfs.ext4 /dev/nvme0n1p2
 ```
 
-Mount the root file systems
+## Mount the root file systems
 
 ```shell
 mount /dev/nvme0n1p2 /mnt
@@ -105,57 +109,57 @@ mkdir /mnt/boot
 mount /dev/nvme0n1p1 /mnt/boot
 ```
 
-Install essential packages
+## Install essential packages
 
 ```shell
 pacstrap /mnt base linux linux-firmware
 ```
 
-Configure Fstab
+## Configure Fstab
 
 ```shell
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-Change root into the new system:
+## Change root into the new system:
 
 ```shell
 arch-chroot /mnt
 ```
 
-Set the time zone
+## Set the time zone
 
 ```shell
 ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime
 ```
 
-Run `hwclock` to generate `/etc/adjtime`:
+## Run `hwclock` to generate `/etc/adjtime`:
 
 ```shell
 hwclock --systohc
 ```
 
-Edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`. Generate the locales by running:
+## Edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`. Generate the locales by running:
 
 ```shell
 locale-gen
 ```
 
-Create the `locale.conf` file, and set the `LANG` variable accordingly:
+## Create the `locale.conf` file, and set the `LANG` variable accordingly:
 
 ```shell
 vim /etc/locale.conf
 LANG=en_US.UTF-8
 ```
 
-Create the hostname file:
+## Create the hostname file:
 
 ```shell
 vim /etc/hostname
 foopub
 ```
 
-Add matching entries to hosts:
+## Add matching entries to hosts:
 
 ```shell
 /etc/hosts
@@ -164,20 +168,21 @@ Add matching entries to hosts:
 127.0.1.1 foopub.localdomain myhostname
 ```
 
-**[Dont need to do this]** Creating a new initramfs is usually not required, because mkinitcpio was run on installation of the kernel package with pacstrap.
-But just run it anyways
+## Creating a new initramfs
+
+**[Dont need to do this]** is usually not required, because mkinitcpio was run on installation of the kernel package with pacstrap.
 
 ```shell
 mkinitcpio -P
 ```
 
-Set the root password
+## Set the root password
 
 ```shell
 passwd
 ```
 
-Install a bootloader: GRUB
+## Install a bootloader: GRUB
 
 ```shell
 pacman -S grub efibootmgr dosfstools os-prober mtools
@@ -187,7 +192,7 @@ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Create a swapfile
+## Create a swapfile
 
 ```shell
 dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress
@@ -202,13 +207,13 @@ Make sure this is inserted at the end of `/etc/fstab`
 /swapfile none swap defaults 0 0
 ```
 
-Install Intel graphics card
+## Install Intel graphics card
 
 ```shell
 pacman -S mesa
 ```
 
-Install Intel microcode
+## Install Intel microcode
 
 ```shell
 pacman -S intel-ucode
@@ -220,13 +225,13 @@ pacman -S intel-ucode
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Install `sudo`
+## Install `sudo`
 
 ```shell
 pacman -S sudo
 ```
 
-Create a user
+## Create a user
 
 ```shell
 useradd -m -g users -G wheel chris
@@ -240,6 +245,8 @@ EDITOR=vim visudo
 ```
 
 Uncomment `%wheel ALL=(ALL) ALL`
+
+## Finish up
 
 Exit `arch-chroot`
 
