@@ -267,7 +267,7 @@ Give new user access to sudo command
 EDITOR=vim visudo
 ```
 
-Uncomment `%wheel ALL=(ALL) ALL`
+Uncomment `%wheel ALL=(ALL) ALL` (usually close to the bottom of the file)
 
 ## Finish up
 
