@@ -67,6 +67,8 @@ Command (m for help): t
 Partition type (type L to list all types): 1
 ```
 
+**NOTE** Type `1` is an `EFI filesystem`
+
 Create a root partition
 
 ```shell
@@ -77,8 +79,10 @@ Last sector (..., default ...): <enter>
 Do you want to remove the signature? y
 
 Command (m for help): t
-Partition type (type L to list all types): 20 (Linux filesystem)
+Partition type (type L to list all types): 20
 ```
+
+**NOTE** Type `20` is a `Linux filesystem`
 
 Write the partitions
 
