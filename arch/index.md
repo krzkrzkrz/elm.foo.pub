@@ -58,7 +58,7 @@ You can also add folders you want to not be ignored to `.gitignore` with `!` at 
 /.config/fish/fishd.*
 ```
 
-When I do a fresh install, just do `git clone https://github.com/<username>/dotfiles`
+When doing a fresh install, just do `git clone https://github.com/<username>/dotfiles`
 
 Which clones the repo into a new folder called `dotfiles`, and then move everything out of `dotfiles` into `~` (including the `.git` folder), overwriting any existing files.
 
