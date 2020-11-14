@@ -7,7 +7,31 @@
 ## Update mirrors and packages
 
 ```shell
-sudo pacmane -Syyyu
+sudo pacman -Syyyu
+```
+
+## Spectrwm
+
+```shell
+sudo pacman -S xorg xorg-xinit xf86-video-intel spectrwm dmenu
+```
+
+Copy default spectrwm conf
+
+```shell
+cp /etc/spectrwm.conf .spectrwm.conf
+```
+
+Modify `vim .xinitrc` with
+
+```shell
+exec spectrwm
+```
+
+To run `spectrwm`
+
+```shell
+exec dmenu
 ```
 
 ## Sudo
