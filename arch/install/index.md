@@ -248,6 +248,26 @@ pacman -S intel-ucode
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+## Install `iwd`
+
+```shell
+pacman -S iwd
+```
+
+Enable the iwd service to start on boot
+
+## Install `dhcpcd`
+
+```shell
+pacman -S dhcpcd
+```
+
+Enable the dhcpcd service to start on boot
+
+```shell
+systemctl enable dhcpcd.service
+```
+
 ## Install `sudo`
 
 ```shell
