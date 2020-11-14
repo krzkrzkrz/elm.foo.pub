@@ -10,10 +10,10 @@
 sudo pacman -Syyyu
 ```
 
-## Spectrwm
+## Install Spectrwm
 
 ```shell
-sudo pacman -S xorg xorg-xinit xf86-video-intel spectrwm dmenu
+sudo pacman -S xorg xorg-xinit xf86-video-intel spectrwm dmenu xterm
 ```
 
 Copy default spectrwm conf
@@ -28,11 +28,37 @@ Modify `vim .xinitrc` with
 exec spectrwm
 ```
 
-To run `spectrwm`
+To run `Spectrwm`
 
 ```shell
-exec dmenu
+startx
 ```
+
+In Spectrwm, to open a terminal, type: `mod+shift+enter`
+
+
+```shell
+cd ~
+git init
+echo "/*" > .gitignore
+git add -f .gitignore
+git commit -m "add .gitignore"
+git add -f .profile
+git commit -m "add .profile"
+```
+
+You can also add folders you want to not be ignored to `.gitignore` with `!` at the start like this
+
+```
+!/.config
+!/.config/fish
+/.config/fish/fish_history
+/.config/fish/fish_variables
+/.config/fish/fishd.*
+```
+
+
+
 
 ## Sudo
 
