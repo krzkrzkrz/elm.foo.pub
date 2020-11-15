@@ -62,8 +62,6 @@ When doing a fresh install, just do `git clone https://github.com/<username>/dot
 
 Which clones the repo into a new folder called `dotfiles`, and then move everything out of `dotfiles` into `~` (including the `.git` folder), overwriting any existing files.
 
-
-
 ## Sudo
 
 [Sudo](https://wiki.archlinux.org/index.php/Sudo)
@@ -88,7 +86,6 @@ wheel ALL=(ALL) ALL
 
 Use an AUR helper to instal AUR packages easier
 
-
 ```shell
 git clone https://aur.archlinux.org/yay.git
 cd yay/
@@ -98,19 +95,19 @@ makepkg -sri
 Install a package:
 
 ```shell
-yay -S ttf-iosveka
+yay -S ttf-iosevka
 ```
 
 Search for a package name
 
 ```shell
-yay -Ss ttf-iosveka
+yay -Ss ttf-iosevka
 ```
 
 Get more information about a package
 
 ```shell
-yay -Si ttf-iosveka
+yay -Si ttf-iosevka
 ```
 
 Update all packages AUR and offical
@@ -134,26 +131,37 @@ yay -Yc
 To remove / uninstall package
 
 ```shell
-yay -R ttf-iosveka
+yay -R ttf-iosevka
 ```
 
 To remove / uninstall package and dependencies
 
 ```shell
-yay -Rs ttf-iosveka
+yay -Rs ttf-iosevka
 ```
 
+## Packages
 
+```shell
+pacman -S base-devel
+pacman -S unzip
+pacman -S alacritty
+pacman -S rofi
+pacman -S tmux
+yay -S rofi-keepassxc
+yay -S escrotum.git
+pacman -S keepassxc
+rofi-keepassxc
+yay -S betterlockscreen
+pacman -S ttf-roboto
+yay -S ttf-iosevka
+pacman -S picom
+pacman -S xclip
+```
 
 ## Font scaling
 
 Instead of modifying X's dpi settings. Just modify the font sizes for each application
-
-## Swap file
-
-[Swap](https://wiki.archlinux.org/index.php/Swap)
-
-TODO
 
 ## Setup .xinitrc
 
