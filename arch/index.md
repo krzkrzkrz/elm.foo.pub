@@ -165,6 +165,25 @@ pacman -S rg
 pacamn -S fzf
 ```
 
+## Install and configure rbenv
+
+Before compiling, make sure the following dependencies are installed first
+
+```shell
+pacman -S --needed base-devel libffi libyaml openssl zlib
+```
+
+```shell
+yay -S rbenv
+yay -S ruby-build
+```
+
+Optionally, you can go ahead and install a Ruby version
+
+```shell
+rbenv install 2.3.6
+```
+
 ## Configure Fish shell
 
 To list shells
