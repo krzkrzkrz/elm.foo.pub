@@ -143,6 +143,7 @@ yay -Rs ttf-iosevka
 ## Packages
 
 ```shell
+pacman -S fish
 pacman -S base-devel
 pacman -S unzip
 pacman -S alacritty
@@ -155,9 +156,60 @@ rofi-keepassxc
 yay -S betterlockscreen
 pacman -S ttf-roboto
 yay -S ttf-iosevka
+yay -S nerd-fonts-complete
 pacman -S picom
 pacman -S xclip
+pacman -S alsa-utils
+yay -S alttab
+pacman -S rg
+pacamn -S fzf
 ```
+
+## Configure Fish shell
+
+To list shells
+
+```shell
+chsh -l
+```
+
+Set fish as default shell
+
+```shell
+chsh -s /usr/bin/fish
+```
+
+## Configure Vim - Dracula theme
+
+In `.vim/plugged/dracula/colors/dracula.vim`, (usually at line 236), comment:
+
+```shell
+hi! link TabLineSel Normal
+```
+
+In `.vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim`, 
+
+1) At around line 19, add:
+
+```shell
+let s:none = ['NONE', 'NONE']
+```
+
+2) Usually at line 32, edit from:
+
+```shell
+let s:p.normal.middle = [ [ s:white, s:gray ]]
+```
+
+To:
+
+```shell
+let s:p.normal.middle = [ [ s:white, s:none ]]
+```
+
+
+
+
 
 ## Font scaling
 
