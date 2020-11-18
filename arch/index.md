@@ -159,7 +159,6 @@ yay -S ttf-iosevka
 yay -S nerd-fonts-complete
 pacman -S picom
 pacman -S xclip
-pacman -S alsa-utils
 yay -S alttab
 pacman -S rg
 pacamn -S fzf

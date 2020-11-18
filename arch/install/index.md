@@ -268,6 +268,24 @@ Enable the dhcpcd service to start on boot
 systemctl enable dhcpcd.service
 ```
 
+## Confugure sound
+
+```shell
+pacman -S alsa-utils
+```
+
+For few newer laptop models (end of 2019/2020) which implement their drivers with firmware provided by the `Sound Open Firmware` project. Install the following:
+
+```shell
+pacman -S sof-firmware alsa-ucm-conf 
+```
+
+Unmuting the sound can be done with, or if unmuted and still low volume, run the following and adjust the settings:
+
+```shell
+alsamixer
+```
+
 ## Install `sudo`
 
 ```shell
