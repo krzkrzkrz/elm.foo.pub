@@ -151,7 +151,6 @@ pacman -S rofi
 pacman -S tmux
 yay -S rofi-keepassxc
 yay -S escrotum.git
-pacman -S keepassxc
 rofi-keepassxc
 yay -S betterlockscreen
 pacman -S ttf-roboto
@@ -256,6 +255,28 @@ sudo pacman -S vim
 ```shell
 sudo pacman -S python
 ```
+
+### Setup Keepassxc
+
+```shell
+pacman -S keepassxc
+```
+
+By default and depending on the screen resolution. Keepassxc fonts and icons may look small.
+
+To fix this, add an alias at `.config/fish/aliases.fish`:
+
+```shell
+alias keepass 'QT_FONT_DPI=192 keepassxc'
+```
+
+And to run Keepassxc, just do `keepass` instead of `keepassxc`
+
+```shell
+QT_FONT_DPI=192
+```
+
+Make sure you restart for changes to take effect.
 
 ### Configure Vim with a package manager (Plug):
 
