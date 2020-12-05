@@ -149,8 +149,8 @@ pacman -S unzip
 pacman -S alacritty
 pacman -S rofi
 pacman -S tmux
+pacman -S maim
 yay -S rofi-keepassxc
-yay -S escrotum.git
 rofi-keepassxc
 yay -S betterlockscreen
 pacman -S ttf-roboto
