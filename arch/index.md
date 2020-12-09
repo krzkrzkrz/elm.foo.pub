@@ -224,9 +224,17 @@ To:
 let s:p.normal.middle = [ [ s:white, s:none ]]
 ```
 
+3) Usually at line 35, edit from:
 
+```shell
+let s:p.inactive.middle = [ [ s:white, s:gray ] ]
+```
 
+To:
 
+```shell
+let s:p.inactive.middle = [ [ s:white, s:none ] ]
+```
 
 ## Font scaling
 
