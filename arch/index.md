@@ -180,6 +180,15 @@ Optionally, you can go ahead and install a Ruby version
 
 ```shell
 rbenv install 2.3.6
+rbenv global 2.3.6
+```
+
+Note, when install Ruby version `2.3.6`, since this is a much older version of Ruby. You need to install the following package first: `openssl-1.0`
+
+And then do:
+
+```shell
+PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig rbenv install 2.3.6
 ```
 
 ## Configure Fish shell
