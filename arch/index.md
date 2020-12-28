@@ -160,7 +160,10 @@ pacman -S picom
 pacman -S xclip
 yay -S alttab
 pacman -S rg
+pacman -S bat
 pacamn -S fzf
+pacamn -S dunst
+pacamn -S papirus-icon-theme
 ```
 
 ## Install and configure rbenv
