@@ -306,7 +306,12 @@ After setting above, run `sudo systemctl restart systemd-logind` (system will re
 ### Hibernate on low battery level
 
 ```shell
-/etc/udev/rules.d/99-lowbat.rules
+sudo vim /etc/udev/rules.d/99-lowbat.rules
+```
+
+Make sure the following is there:
+
+```shell
 # Suspend the system when battery level drops to 5% or lower
 SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="/usr/bin/systemctl hibernate"
 ```
