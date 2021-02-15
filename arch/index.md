@@ -172,7 +172,18 @@ pacman -S tlp
 
 ## Setting hibernation
 
-1) Make sure the swapfile is big enough
+Things to know:
+
+**Suspend**, saving the state to RAM
+Meaning, system does not completely shut-off. Machine still supplies power to the RAM. Downside to this, if system runs out of power, data is lost
+
+**Hibernate**, saving the state to disk.
+System shuts down, power is saved. Data is also retained on reboot.
+
+**Sleep**, Is a hybrid of suspend and hibernate.
+Save the system state to RAM and saving user space to disk. Allows the system to remain on, so you can quickly resume, but its using less power because user space, all currently opened programs is saved to disk
+
+### 1) Make sure the swapfile is big enough
 
 For 32GB ram, we set swap file to 1.5x. So to 48gb, which is 48000MB
 
@@ -198,7 +209,7 @@ Make sure, at `/etc/fstab`, the following is still there:
 /swapfile none swap defaults 0 0
 ```
 
-2) Get the `UUID`
+### 2) Get the `UUID`
 
 For a standard root partition we need the partition that is mounted to root (/) and it's `UUID`.
 
@@ -222,7 +233,7 @@ $ sudo blkid
 
 `88672022-6816-428f-9ff8-38329a85cde5` is the `UUID`.
 
-3) Get the `physical offset of /swapfile`
+### 3) Get the `physical offset of /swapfile`
 
 ```shell
 $ sudo filefrag -v /swapfile
@@ -240,7 +251,7 @@ The value we are after is the `ext 0`, `physical offset` (first value of physica
 
 Which is `2719744`
 
-4) Update grub config to resume (hibernate) on boot
+### 4) Update grub config to resume (hibernate) on boot
 
 With the `UUID` and `physical offset` values known. We can now edit GRUB:
 
@@ -260,7 +271,7 @@ Then generate the new GRUB config file:
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-5) Add `resume` to `mkinitcpio HOOKS`
+### 5) Add `resume` to `mkinitcpio HOOKS`
 
 ```shell
 sudo vim /etc/mkinitcpio.conf
@@ -276,6 +287,28 @@ Generate the images:
 
 ```shell
 sudo mkinitcpio -p linux
+```
+
+To test if hibernate works, type `systemctl hibernate`.
+
+Wait few seconds, screen may flicker. System will shutdown. Press power-on button. GRUB should show up. At this point. Dont need to sign in anymore, system should take you straight to last session.
+
+### Update `HandleLidSwitch` for more power saving
+
+Set the `HandleLidSwitch` from `suspend` to `hybrid-sleep`, to save more power
+
+```shell
+sudo vim /etc/systemd/logind.conf
+```
+
+After setting above, run `sudo systemctl restart systemd-logind` (system will reboot)
+
+### Hibernate on low battery level
+
+```shell
+/etc/udev/rules.d/99-lowbat.rules
+# Suspend the system when battery level drops to 5% or lower
+SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="/usr/bin/systemctl hibernate"
 ```
 
 ## Packages
