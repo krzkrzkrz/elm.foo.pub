@@ -140,16 +140,155 @@ To remove / uninstall package and dependencies
 yay -Rs ttf-iosevka
 ```
 
+## NTP
+
+Network Time Protocol daemon
+
+```shell
+sudo pacman -S ntp
+systemctl enable ntpd.service
+systemctl status ntpd.service
+```
+
+## Audio / Microphone
+
+```shell
+pacman -S alsa-utils
+pacman -S pulseaudio
+pacman -S pulseaudio-alsa
+```
+
+You can install `pavuctrol` for a graphical UI to manage devices
+
+```shell
+pacman -S pavucontrol
+```
+
+## Power saving
+
+```shell
+pacman -S tlp
+```
+
+## Setting hibernation
+
+1) Make sure the swapfile is big enough
+
+For 32GB ram, we set swap file to 1.5x. So to 48gb, which is 48000MB
+
+If existing swap file exists. Remove it first:
+
+```shell
+swapoff /swapfile
+rm -f /swapfile
+```
+
+Then create a new swapfile:
+
+```shell
+dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+```
+
+Make sure, at `/etc/fstab`, the following is still there:
+
+```shell
+/swapfile none swap defaults 0 0
+```
+
+2) Get the `UUID`
+
+For a standard root partition we need the partition that is mounted to root (/) and it's `UUID`.
+
+You can do this with runnint `df` in a terminal. We're looking for `Mounted On` and `/`. In the example below, we can see that `/dev/nvme0n1p2` is mounted on `/`. For example:
+
+```shell
+$ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+dev             16239140        0  16239140   0% /dev
+run             16248284     1332  16246952   1% /run
+/dev/nvme0n1p2 244580992 80849208 151238100  35% /
+```
+
+To get the UUID, type `sudo blkid`:
+
+```shell
+$ sudo blkid
+/dev/nvme0n1p1: UUID="E073-485C" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="48229116-98ef-9745-bd3e-339c76239c93"
+/dev/nvme0n1p2: UUID="88672022-6816-428f-9ff8-38329a85cde5" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="67d1f955-4e56-ea41-927c-25a285e513a2"
+```
+
+`88672022-6816-428f-9ff8-38329a85cde5` is the `UUID`.
+
+3) Get the `physical offset of /swapfile`
+
+```shell
+$ sudo filefrag -v /swapfile
+Filesystem type is: ef53
+File size of /swapfile is 50331648000 (12288000 blocks of 4096 bytes)
+ ext:     logical_offset:        physical_offset: length:   expected: flags:
+   0:        0..  425983:    2719744..   3145727: 425984:
+   1:   425984..  456703:    5703680..   5734399:  30720:    3145728:
+   2:   456704..  485375:    5738496..   5767167:  28672:    5734400:
+   3:   485376..  489471:    5812224..   5816319:   4096:    5767168:
+   ...
+```
+
+The value we are after is the `ext 0`, `physical offset` (first value of physical_offset).
+
+Which is `2719744`
+
+4) Update grub config to resume (hibernate) on boot
+
+With the `UUID` and `physical offset` values known. We can now edit GRUB:
+
+```shell
+sudo vim /etc/default/grub
+```
+
+Update the `GRUB_CMDLINE_LINUX_DEFAULT` value to include `resume` and `resume_offset`. For example:
+
+```shell
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=UUID=88672022-6816-428f-9ff8-38329a85cde5 resume_offset=2719744"
+```
+
+Then generate the new GRUB config file:
+
+```shell
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+5) Add `resume` to `mkinitcpio HOOKS`
+
+```shell
+sudo vim /etc/mkinitcpio.conf
+```
+
+Look for `HOOKS` and add `resume`, for example:
+
+```shell
+HOOKS=(base udev autodetect modconf block resume filesystems keyboard fsck)
+```
+
+Generate the images:
+
+```shell
+sudo mkinitcpio -p linux
+```
+
 ## Packages
 
 ```shell
 pacman -S fish
 pacman -S base-devel
 pacman -S unzip
-pacman -S alacritty
+pacman -S kitty
 pacman -S rofi
 pacman -S tmux
 pacman -S maim
+pacman -S ntp
 yay -S rofi-keepassxc
 rofi-keepassxc
 yay -S betterlockscreen
@@ -164,6 +303,11 @@ pacman -S bat
 pacamn -S fzf
 pacamn -S dunst
 pacamn -S papirus-icon-theme
+pacman -S perl-pod-parser
+yay -S tdrop-git
+pacman -S redis
+pacman -S exa
+pacman -S discord
 ```
 
 ## Install and configure rbenv
