@@ -157,12 +157,15 @@ yay -S betterlockscreen
 pacman -S ttf-roboto
 yay -S ttf-iosevka
 yay -S nerd-fonts-complete
+yay -S nerd-fonts-complete
 pacman -S picom
 pacman -S xclip
 pacman -S alsa-utils
 yay -S alttab
 pacman -S rg
 pacamn -S fzf
+pacamn -S autocutsel
+pacamn -S unclutter
 ```
 
 ## Install and configure rbenv
