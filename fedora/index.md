@@ -30,7 +30,14 @@ Note: The first time you attempt to install packages from these repositories, th
 sudo dnf install gnome-tweak-tool
 ```
 
-After installation, find Ghome Tweak tool in the application menu
+### Gnome extensions
+
+```shell
+sudo dnf install gnome-tweak-tool
+```
+
+
+After installation, find `Tweaks` in the application menu
 
 ### TLP
 
