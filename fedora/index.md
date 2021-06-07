@@ -32,12 +32,7 @@ sudo dnf install gnome-tweak-tool
 
 ### Gnome extensions
 
-```shell
-sudo dnf install gnome-tweak-tool
-```
-
-
-After installation, find `Tweaks` in the application menu
+Go to https://extensions.gnome.org and install the extension on your browser
 
 ### TLP
 
@@ -112,9 +107,17 @@ Scaling Factor: 1.00
 
 ### Google Chrome
 
+Go to the Google Chrome home page, download the `rpm` version and double click to install (preferred way)
+
+- OR -
+
 Enable the repo in the software manager and install it via the software shop
 
 ### Slack
+
+Go to the Slack home page, download the `rpm` version and double click to install (preferred way)
+
+- OR -
 
 ```shell
 sudo dnf -y install wget
@@ -124,12 +127,14 @@ sudo dnf localinstall slack-4.14.0-0.1.fc21.x86_64.rpm
 
 ### Alacritty
 
-TODO
+```shell
+sudo dnf install -y alacritty
+```
 
 ### VLC
 
 ```shell
-sudo dnf install vlc
+sudo dnf install -y vlc
 ```
 
 ### Multimedia codecs (optional)
