@@ -105,6 +105,12 @@ Antialiasing: Standard (greyscale)
 Scaling Factor: 1.00
 ```
 
+### Install Roboto font
+
+```
+sudo dnf install google-roboto-fonts
+```
+
 ### Google Chrome
 
 Go to the Google Chrome home page, download the `rpm` version and double click to install (preferred way)
